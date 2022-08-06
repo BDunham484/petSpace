@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS petspace_db;
+
+CREATE DATABASE petspace_db;
