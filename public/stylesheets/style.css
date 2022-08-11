@@ -43,13 +43,13 @@ main {
     border-radius: 20px;
 }
 
-/* .form-elements input {
-    padding: 0 50px;
+#password-login {
+    font-family: FontAwesome;
 }
 
-#login-form button {
-    padding: 0 50px;
-} */
+#email-login {
+    font-family: FontAwesome;
+}
 
 /* LOGIN STYLES END */
 
