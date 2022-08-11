@@ -38,7 +38,7 @@ main {
 /* LOGIN STYLES START */
 #login-form {
     width: 50vw;
-    height: 50vh;
+    min-height: 50vh;
     background-color: aliceblue !important;
     border-radius: 20px;
 }
