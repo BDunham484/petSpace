@@ -1,0 +1,55 @@
+/* UNIVERSAL/GLOBAL STYLES START*/
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+    background-color: #F3F5F6;
+}
+/* UNIVERSAL/GLOBAL STYLES END */
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR STYLES START */
+
+/* NAVBAR STYLES STOP */
+
+/* MAIN STYLES START */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* MAIN STYLES END */
+
+/* LOGIN STYLES START */
+#login-form {
+    width: 50vw;
+    min-height: 50vh;
+    background-color: aliceblue !important;
+    border-radius: 20px;
+}
+
+#password-login {
+    font-family: FontAwesome;
+}
+
+#email-login {
+    font-family: FontAwesome;
+}
+
+/* LOGIN STYLES END */
+
