@@ -10,7 +10,7 @@ async function createPostHandler(event) {
         const response = await fetch('/api/posts', {
             method: 'post',
             body: JSON.stringify({
-                // user_id,
+                user_id,
                 post_image,
                 post_text,
                 // created_at
