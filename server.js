@@ -29,11 +29,12 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(session(sess));
 
-//default option for fileupload
 
-//template engine
-app.engine('hbs', exphbs)
-app.set('view engine', 'hbs')
+// //default option for fileupload
+// app.use(fileUpload({
+//     //parameters for docuemntation check later
+// }))
+
 
 // turn on routes
 app.use(routes);
