@@ -53,3 +53,20 @@ main {
 
 /* LOGIN STYLES END */
 
+/* SIGNUP STYLES START */
+#signup-form {
+    width: 50vw;
+    min-height: 50vh;
+    background-color: aliceblue !important;
+    border-radius: 20px;
+}
+
+#password-signup {
+    font-family: FontAwesome;
+}
+
+#email-signup {
+    font-family: FontAwesome;
+}
+/* SIGNUP STYLES END */
+
