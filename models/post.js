@@ -18,12 +18,9 @@ Post.init(
             }
         },
         pet_type: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
+            
         },
         user_id: {
             type: DataTypes.INTEGER,
