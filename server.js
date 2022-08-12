@@ -29,11 +29,20 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(session(sess));
 
+//default option for fileupload
+app.use(fileUpload({
+    //parameters for docuemntation check later
+}))
 
-// //default option for fileupload
-// app.use(fileUpload({
-//     //parameters for docuemntation check later
-// }))
+app.post('', (req, res) => {
+    let sampleFile
+    let uploadPath
+
+    if(!req.files || Objest.keys(req.files).length === 0 {
+        return res.status(400).sen
+    }
+    }
+})
 
 
 // turn on routes
