@@ -1,19 +1,27 @@
 <div class="row dashboard-row">
-    <section class="col-2" id="left-column">
+    <section class="col-2 d-flex flex-column align-items-center" id="left-column">
         {{!-- Create New Post/Modal Button --}}
         <button type="submit" class="btn mt-5" id="create-new-post" data-bs-toggle="modal"
             data-bs-target="#create-post-modal">+ Create new post</button>
 
         <!-- Modal -->
-        <div class="modal fade" id="create-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="create-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tell us about your pet</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        ...
+                    <div class="modal-body d-flex flex-column align-items-center">
+                        <div class="mb-3 form-elements col-10">
+                            <label for="post-image" class="form-label"><i class="fa-solid fa-image"></i></label>
+                            <input type="text" class="form-control" id="post-image" placeholder="Image">
+                        </div>
+                        <div class="mb-3 form-elements col-10">
+                            <label for="post-text" class="form-label"><i class="fa-solid fa-comment"></i></label>
+                            <input type="text" class="form-control" id="post-text" placeholder="Tell us about your pet">
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

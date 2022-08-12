@@ -95,5 +95,11 @@ main {
     background-color: #F5F5F5;
 }
 
+.modal-header {
+    background-color: #F5F5F5;
+}
 
+.modal-footer {
+    background-color: #F5F5F5 !important;
+}
 /* DASHBOARD STYLES END */
