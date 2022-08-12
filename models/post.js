@@ -10,6 +10,13 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
+        post_image: {
+            type: DataTypes.JSON
+        },
+        post_text: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         pet_name: {
             type: DataTypes.STRING,
             allowNull: false,

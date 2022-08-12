@@ -102,4 +102,12 @@ main {
 .modal-footer {
     background-color: #F5F5F5 !important;
 }
+
+.post-list {
+    list-style: none;
+}
+
+/* .card {
+    width: 20vw;
+} */
 /* DASHBOARD STYLES END */
