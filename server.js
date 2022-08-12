@@ -38,10 +38,12 @@ app.post('', (req, res) => {
     let sampleFile
     let uploadPath
 
-    if(!req.files || Objest.keys(req.files).length === 0 {
-        return res.status(400).sen
+    if(!req.files || Objest.keys(req.files).length === 0) {
+        return res.status(400).send('No files were uploaded.')
     }
-    }
+
+    sampleFile = req.files.sampleFile
+    console.log(sampleFile)
 })
 
 
