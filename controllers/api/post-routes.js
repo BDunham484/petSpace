@@ -79,6 +79,8 @@ router.post('/', (req, res) => {
     user_id: req.session.user_id,
     post_image: req.body.post_image,
     post_text: req.body.post_text,
+    pet_name: req.body.pet_name,
+    pet_type: req.body.pet_type,
     // created_at: req.body.created_at
     
   })
