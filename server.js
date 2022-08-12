@@ -4,6 +4,7 @@ const sequelize = require('./config/connection');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
+const fileUpload = require('express-fileupload')
 
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -27,6 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(session(sess));
+
+//default option for fileupload
+
+//template engine
+app.engine('hbs', exphbs)
+app.set('view engine', 'hbs')
 
 // turn on routes
 app.use(routes);
