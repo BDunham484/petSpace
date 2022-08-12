@@ -10,8 +10,8 @@ const { Post, User, Comment } = require('../models');
 //             },
 //             attributes: [
 //                 'id',
-//                 'title',
-//                 'image',
+//                 'user_id',
+//                 'post_image',
 //                 'content',
 //                 'created_at'
 //             ],

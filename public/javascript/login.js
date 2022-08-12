@@ -1,11 +1,3 @@
-// const input = document.getElementById('password-login');
-
-// const setCursor = () => {
-//     input.focus();
-//     input.setSelectionRange(10,30);
-// }
-
-
 
 async function loginFormHandler(event) {
     event.preventDefault();
