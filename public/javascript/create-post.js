@@ -2,7 +2,7 @@ async function createPostHandler(event) {
     event.preventDefault();
 
     // document.location.replace('/dashboard/new')
-    alert('button works!')
+    // alert('button works!')
 }
 
 

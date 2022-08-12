@@ -1,3 +1,12 @@
+// const input = document.getElementById('password-login');
+
+// const setCursor = () => {
+//     input.focus();
+//     input.setSelectionRange(10,30);
+// }
+
+
+
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -22,4 +31,5 @@ async function loginFormHandler(event) {
     }
 }
 
+// document.querySelector('#password-login').addEventListener('click', setCursor)
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
