@@ -1,35 +1,45 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-module.exports = function(sequelize, DataTypes) {
-    var Post = sequelize.define("Post", {
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: " ",
-        validate: {
-          len: [0-150]
+class Post extends Model { }
+
+Post.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        pet_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        pet_type: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'post',
+                key: 'id'
+            }
         }
-      },
-      imageURL: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      animal: {
-        type: DataTypes.STRING,
-        defaultValue: "Other"
-      },
-   
-    });
-  
-    Post.associate = function(models) {
-        Post.belongsTo(models.User, {foreignKey: { allowNull: false }})
-  
-        Post.hasMany(models.Comment) 
-  
-  
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'post'
     }
-  
-  
-    return Post;
-  };
+);
+
+module.exports = Post
