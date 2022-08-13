@@ -4,13 +4,15 @@ const { Post, User, Like, Comment } = require('../../models')
 
 router.get('/', (req, res) => {
   Post.findAll({
-    order: [['created_at', sequelize.fn('RAND')]],
+    // order: [['created_at', sequelize.fn('RAND')]],
     attributes: [
       'id',
-      'post_url',
-      'title',
+      'post_image',
+      'post_text',
+      'pet_name',
+      'pet_type',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM `like` WHERE post.id = `like`.post_id)'), 'liked_count']
     ],
     include: [
       {
@@ -44,7 +46,7 @@ router.get('/:id', (req, res) => {
       'post_url',
       'title',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = like.post_id)'), 'like_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM `like` WHERE post.id = `like`.post_id)'), 'liked_count']
     ],
     include: [
       {
@@ -92,8 +94,8 @@ router.post('/', (req, res) => {
     })
 })
 
-router.put('/upvote', (req, res) => {
-  Post.upvote(req.body, { Vote })
+router.put('/like', (req, res) => {
+  Post.like(req.body, { Like })
     .then(updatedPostData => res.json(updatedPostData))
     .catch(err => {
       console.log(err);
