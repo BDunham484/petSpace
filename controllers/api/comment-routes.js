@@ -18,7 +18,6 @@ router.get('/', (req, res) => {
 
 //POST api/comments
 router.post('/', (req, res) => {
-    console.log(req.session)
     // check the session
     if (req.session) {
         //if session access comment model and run .create() method
@@ -26,7 +25,7 @@ router.post('/', (req, res) => {
             comment_text: req.body.comment_text,
             post_id: req.body.post_id,
             // use the id from the session
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         })
             .then(dbCommentData => res.json(dbCommentData))
             .catch(err => {
