@@ -90,6 +90,7 @@ main {
 
 #center-column {
     min-height: 90vh;
+    background-color: white;
 }
 
 #right-column {
@@ -109,7 +110,11 @@ main {
     list-style: none;
 }
 
-/* .card {
-    width: 20vw;
-} */
+.card-header {
+    background-color: aliceblue !important;
+}
+
+.card-footer {
+    background-color: aliceblue !important;
+}
 /* DASHBOARD STYLES END */
