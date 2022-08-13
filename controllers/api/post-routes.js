@@ -43,8 +43,10 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
-      'title',
+      'post_image',
+      'post_text',
+      'pet_name',
+      'pet_type',
       'created_at',
       [sequelize.literal('(SELECT COUNT(*) FROM `like` WHERE post.id = `like`.post_id)'), 'liked_count']
     ],
@@ -95,12 +97,16 @@ router.post('/', (req, res) => {
 })
 
 router.put('/like', (req, res) => {
-  Post.like(req.body, { Like })
-    .then(updatedPostData => res.json(updatedPostData))
+  //make sure session exists
+  if (req.session) {
+    Post.like({ ...req.body, user_id: req.session.user_id}, { Like, Comment, User })
+    .then(updatedLikeData => res.json(updatedLikeData))
     .catch(err => {
       console.log(err);
       res.status(400).json(err)
     })
+  }
+  
 })
 
 router.put('/:id', (req, res) => {

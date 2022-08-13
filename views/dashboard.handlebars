@@ -71,6 +71,9 @@
                         </div>
                         <div class="card-footer">
                             <a href="#" class="btn btn-info bg-gradient">Like?</a>
+                            {{post.liked_count}} like(s)
+                            |
+                            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
                         </div>
                     </div>
                 </li>

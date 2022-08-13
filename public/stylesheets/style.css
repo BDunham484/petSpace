@@ -33,6 +33,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 /* MAIN STYLES END */
@@ -118,3 +119,7 @@ main {
     background-color: aliceblue !important;
 }
 /* DASHBOARD STYLES END */
+
+/* SINGLE POST STYLES START */
+
+/* SINGLE POST STYLES END */
