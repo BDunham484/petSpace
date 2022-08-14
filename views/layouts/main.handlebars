@@ -24,12 +24,15 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto me-5">
+                            {{#if loggedIn}}
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">navLink</a>
+                                <a class="nav-link text-white" id="logout" href="#">Logout</a>
                             </li>
+                            {{else}}
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">navLink</a>
+                                <a class="nav-link text-white" href="#">Login</a>
                             </li>
+                            {{/if}}
                         </ul>
                     </div>
                 </div>
@@ -43,10 +46,10 @@
         </footer>
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+        <script src="/javaScript/logout.js"></script>
     {{!-- <script src="https://kit.fontawesome.com/bd16a95e3e.js" crossorigin="anonymous"></script> --}}
 </body>
 
