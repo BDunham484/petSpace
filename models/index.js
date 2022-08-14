@@ -13,7 +13,8 @@ User.hasMany(Comment, {
 })
 
 Post.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    // onDelete: 'SET NULL'
 })
 
 Post.hasMany(Comment, {
@@ -32,13 +33,15 @@ Comment.belongsTo(Post, {
 User.belongsToMany(Post, {
     through: Like,
     as: 'liked_posts',
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    // onDelete: 'SET NULL'
 });
 
 Post.belongsToMany(User, {
     through: Like,
     as: 'liked_posts',
-    foreignKey: 'post_id'
+    foreignKey: 'post_id',
+    // onDelete: 'SET NULL'
 });
 
 Like.belongsTo(User, {
