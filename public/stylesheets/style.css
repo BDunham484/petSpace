@@ -34,6 +34,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 /* MAIN STYLES END */
 
 /* LOGIN STYLES START */
@@ -84,6 +85,7 @@ main {
 #left-column {
     min-height: 90vh;
     background-color: #F5F5F5;
+    
 }
 
 #center-column {
@@ -102,4 +104,12 @@ main {
 .modal-footer {
     background-color: #F5F5F5 !important;
 }
+
+.post-list {
+    list-style: none;
+}
+
+/* .card {
+    width: 20vw;
+} */
 /* DASHBOARD STYLES END */
