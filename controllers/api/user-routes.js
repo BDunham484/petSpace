@@ -110,8 +110,6 @@ router.post('/login', (req, res) => {
     });
 });
 
-
-
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
     // Access User model and run .update() method)
