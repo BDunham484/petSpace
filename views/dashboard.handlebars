@@ -46,39 +46,9 @@
             <h2>Look at all these pets!</h2>
             <ul class="post-list  d-flex flex-column align-items-center">
                 {{#each posts as |post|}}
+                {{!-- <a href="/dashboard/edit/{{id}}">Edit post</a> --}}
                 <li>
-                    {{!-- {{> post-info post}} --}}
-                    {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a> --}}
-                    {{!-- <p>{{post.id}}</p> --}}
-                    {{!-- <p>{{post.user_id}}</p> --}}
-                    {{!-- <p>{{post.created_at}}</p> --}}
-                    {{!-- <p>{{post.pet_name}}</p> --}}
-                    {{!-- <p>{{post.pet_type}}</p> --}}
-                    {{!-- <p>{{post.post_text}}</p> --}}
-                    {{!-- <p>{{post.post_image}}</p> --}}
-                    {{!-- <p>{{post.user.username}}</p> --}}
-
-                    <div class="card col-10 mx-auto my-3" id="#{{post.id}}">
-                        <div class="card-header">
-                            <h5>{{post.pet_name}} the {{post.pet_type}}<span class="card-subtitle mb-2 text-muted"> w/
-                                    {{post.user.username}}</span></h5>
-                            <p class="mb-2 text-muted">{{post.created_at}}</p>
-                        </div>
-
-                        <img src="https://image.shutterstock.com/image-illustration/404-error-page-not-found-600w-308387615.jpg"
-                            class="card-img-top" alt="...">
-                        <hr class="border border-dark border-1 opacity-25 col-12">
-                        <div class="card-body">
-                            <p class="card-text">{{post.post_text}}</p>
-                        </div>
-                        <div class="card-footer">
-                            {{!-- <a href="#{{post.id}}" class="btn btn-info bg-gradient" id="like-btn">Like</a> --}}
-                            <textarea id="hidden_id">{{post.id}}</textarea>
-                            {{post.liked_count}} <a href="#{{post.id}}" class="like-btn">like(s)</a>
-                            |
-                            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-                        </div>
-                    </div>
+                    {{> post-info post}}
                 </li>
                 {{/each}}
             </ul>
