@@ -118,6 +118,10 @@ main {
 .card-footer {
     background-color: aliceblue !important;
 }
+
+#hidden_id {
+    display: none;
+}
 /* DASHBOARD STYLES END */
 
 /* SINGLE POST STYLES START */

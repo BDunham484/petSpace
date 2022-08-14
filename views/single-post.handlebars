@@ -27,8 +27,9 @@
                     <p class="card-text">{{post.post_text}}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-info bg-gradient like-btn">Like?</a>
-                    {{post.liked_count}} like(s)
+                    {{!-- <a href="#" class="btn btn-info bg-gradient" id="like-btn">Like</a> --}}
+                    <textarea id="hidden_id">{{post.id}}</textarea>
+                    {{post.liked_count}} <a href="#" class="like-btn">like(s)</a>
                     |
                     <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
                 </div>
@@ -40,8 +41,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-floating my-5">
-                        <textarea class="form-control" placeholder="Leave a comment here"
-                            id="comment-body"></textarea>
+                        <textarea class="form-control" placeholder="Leave a comment here" id="comment-body"></textarea>
                         <label for="domment-body">Comments</label>
                     </div>
                     <a href="#" class="btn btn-info bg-gradient mb-3 comment-btn">Add comment</a>
