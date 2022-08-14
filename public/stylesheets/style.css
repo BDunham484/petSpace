@@ -33,6 +33,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 /* MAIN STYLES END */
@@ -90,6 +91,7 @@ main {
 
 #center-column {
     min-height: 90vh;
+    background-color: white;
 }
 
 #right-column {
@@ -109,7 +111,19 @@ main {
     list-style: none;
 }
 
-/* .card {
-    width: 20vw;
-} */
+.card-header {
+    background-color: aliceblue !important;
+}
+
+.card-footer {
+    background-color: aliceblue !important;
+}
+
+#hidden_id {
+    display: none;
+}
 /* DASHBOARD STYLES END */
+
+/* SINGLE POST STYLES START */
+
+/* SINGLE POST STYLES END */
