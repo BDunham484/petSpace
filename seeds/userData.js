@@ -23,5 +23,5 @@ const userData = [
 //function to bulk create initial users
 const seedUser = () => User.bulkCreate(userData);
 
-//export functio to index.js
+//export function to index.js
 module.exports = seedUser;
