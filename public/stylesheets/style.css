@@ -12,6 +12,17 @@ html {
     color: #333;
     background-color: #F3F5F6;
 }
+
+.navbar-brand
+{
+    position: relative;
+    background: url(../images/logo.png);
+    width: 170px;   
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /* UNIVERSAL/GLOBAL STYLES END */
 
 .wrapper {
