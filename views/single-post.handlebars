@@ -2,18 +2,7 @@
     <h2>Look at all these pets!</h2>
     <ul class="post-list  d-flex flex-column align-items-center">
         <li>
-            {{!-- {{> post-info post}} --}}
-            {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a> --}}
-            {{!-- <p>{{post.id}}</p> --}}
-            {{!-- <p>{{post.user_id}}</p> --}}
-            {{!-- <p>{{post.created_at}}</p> --}}
-            {{!-- <p>{{post.pet_name}}</p> --}}
-            {{!-- <p>{{post.pet_type}}</p> --}}
-            {{!-- <p>{{post.post_text}}</p> --}}
-            {{!-- <p>{{post.post_image}}</p> --}}
-            {{!-- <p>{{post.user.username}}</p> --}}
-
-            <div class="card col-10 mx-auto my-3">
+            <div class="card col-10 mx-auto my-3" id="#{{post.id}}">
                 <div class="card-header">
                     <h5>{{post.pet_name}} the {{post.pet_type}}<span class="card-subtitle mb-2 text-muted"> w/
                             {{post.user.username}}</span></h5>
@@ -27,11 +16,13 @@
                     <p class="card-text">{{post.post_text}}</p>
                 </div>
                 <div class="card-footer">
-                    {{!-- <a href="#" class="btn btn-info bg-gradient" id="like-btn">Like</a> --}}
-                    <textarea id="hidden_id">{{post.id}}</textarea>
-                    {{post.liked_count}} <a href="#" class="like-btn">{{format_plural "Like" liked_count}}</a>
+                    {{!-- <a href="#{{post.id}}" class="btn btn-info bg-gradient" id="like-btn">Like</a> --}}
+                    {{!-- {{liked_count}} <a href="#{{id}}" class="like-btn">{{format_plural "Like" liked_count}}</a>
+                    --}}
+                    {{post.liked_count}} <button onclick="likeClickHandler(this)" class="like-btn"
+                        data-id={{post.id}}>{{format_plural "Like" post.liked_count}}</button>
                     |
-                    <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "Comment" comments.length}}</a>
+                    <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "Comment" post.comments.length}}</a>
                 </div>
             </div>
 
@@ -55,7 +46,7 @@
                 {{#each post.comments}}
                 <div class="card mb-2">
                     <div class="card-header">
-                        {{user.username}} on {{created_at}}
+                        {{user.username}} on {{format_date created_at}}
                     </div>
                     <div class="card-body">
                         {{comment_text}}
