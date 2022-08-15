@@ -11,15 +11,12 @@
     <div class="card-body">
         <p class="card-text">{{post_text}}</p>
     </div>
-    <div class="card-footer">
-        {{!-- <a href="#{{post.id}}" class="btn btn-info bg-gradient" id="like-btn">Like</a> --}}
-        {{!-- {{liked_count}} <a href="#{{id}}" class="like-btn">{{format_plural "Like" liked_count}}</a> --}}
-        {{liked_count}} <button onclick="likeClickHandler(this)" class="like-btn" data-id={{id}}>{{format_plural "Like" liked_count}}</button>
-        |
-        <a href="/post/{{id}}">{{comments.length}} {{format_plural "Comment" comments.length}}</a>
+    <div class="card-footer d-flex justify-content-between">
+        <button onclick="likeClickHandler(this)" class="like-btn btn btn-info bg-gradient" data-id={{id}}>{{liked_count}}  {{format_plural "Like"
+            liked_count}}</button>
+        {{!-- {{liked_count}} <button onclick="likeClickHandler(this)" class="like-btn" data-id="{{id}}"><i
+                class="bi bi-star" id="not-liked"></i>
+            <i class="bi bi-star-fill" id="liked"></i></button> --}}
+        <a href="/post/{{id}}" class="btn btn-secondary bg-gradient">{{comments.length}} {{format_plural "Comment" comments.length}}</a>
     </div>
 </div>
-
-
-
-

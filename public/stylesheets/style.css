@@ -119,9 +119,14 @@ main {
     background-color: aliceblue !important;
 }
 
-#hidden_id {
+#not-liked {
+    display: block;
+}
+
+#liked {
     display: none;
 }
+
 /* DASHBOARD STYLES END */
 
 /* SINGLE POST STYLES START */

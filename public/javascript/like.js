@@ -3,6 +3,7 @@ async function likeClickHandler(element) {
     console.log('like button clicked');
 
     const id = element.dataset.id;
+
     console.log(id);
     const response = await fetch('/api/posts/like', {
         method: 'PUT',
@@ -13,7 +14,7 @@ async function likeClickHandler(element) {
             'Content-Type': 'application/json'
         }
     });
-    
+
     if (response.ok) {
         console.log('like response okay');
         document.location.reload();
@@ -21,5 +22,6 @@ async function likeClickHandler(element) {
         alert(response.statusText);
     }
 }
+
 
 document.querySelector('.like-btn').addEventListener('click', likeClickHandler);
