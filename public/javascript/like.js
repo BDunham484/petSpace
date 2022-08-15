@@ -1,11 +1,8 @@
-async function likeClickHandler() {
-    // event.preventDefault();
-    console.log('like button clicked');
-    // const id = window.location.toString().split('/')[
-    //     window.location.toString().split('/').length - 1
-    // ];
+async function likeClickHandler(element) {
 
-    const id = document.querySelector('textarea[id="hidden_id"]').value.trim();
+    console.log('like button clicked');
+
+    const id = element.dataset.id;
     console.log(id);
     const response = await fetch('/api/posts/like', {
         method: 'PUT',
