@@ -6,9 +6,7 @@ const { Post, User, Comment } = require('../models');
 router.get('/', (req, res) => {
     console.log(req.body)
     Post.findAll({
-            where: {
-                user_id: req.session.user_id
-            },
+            order: [sequelize.fn('RAND')],
             attributes: [
                 'id',
                 'user_id',
@@ -38,6 +36,7 @@ router.get('/', (req, res) => {
             const posts = dbPostData.map(post => post.get({
                 plain: true
             }));
+            console.log(posts)
             res.render('dashboard', {
                 posts,
                 loggedIn: true
@@ -46,6 +45,7 @@ router.get('/', (req, res) => {
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
+            res.redirect('/signup');
         });
 });
 
@@ -101,8 +101,6 @@ router.get('/', (req, res) => {
 //     })
 // })
 
-router.get('/', (req, res) => {
-    res.render('dashboard')
-})
+
 
 module.exports = router;

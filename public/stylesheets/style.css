@@ -36,6 +36,7 @@ main {
     background-color: white;
 }
 
+
 /* MAIN STYLES END */
 
 /* LOGIN STYLES START */
@@ -84,19 +85,20 @@ main {
 }
 
 #left-column {
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #F5F5F5;
-    
 }
 
 #center-column {
     min-height: 90vh;
     background-color: white;
+    padding-top: 14vh;
 }
 
 #right-column {
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #F5F5F5;
+
 }
 
 .modal-header {
@@ -111,6 +113,10 @@ main {
     list-style: none;
 }
 
+.card {
+    box-shadow: -5px 5px 5px #a2a0a0;
+}
+
 .card-header {
     background-color: aliceblue !important;
 }
@@ -119,9 +125,14 @@ main {
     background-color: aliceblue !important;
 }
 
-#hidden_id {
+#not-liked {
+    display: block;
+}
+
+#liked {
     display: none;
 }
+
 /* DASHBOARD STYLES END */
 
 /* SINGLE POST STYLES START */

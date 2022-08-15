@@ -22,6 +22,7 @@ async function createPostHandler(event) {
 
         if (response.ok) {
             console.log("post received")
+            window.location.reload();
         } else {
             alert(response.statusText);
         }
