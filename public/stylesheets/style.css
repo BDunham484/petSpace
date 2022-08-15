@@ -36,6 +36,7 @@ main {
     background-color: white;
 }
 
+
 /* MAIN STYLES END */
 
 /* LOGIN STYLES START */
@@ -84,19 +85,21 @@ main {
 }
 
 #left-column {
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #F5F5F5;
-    
+    /* padding-top: 14vh; */
 }
 
 #center-column {
     min-height: 90vh;
     background-color: white;
+    padding-top: 14vh;
 }
 
 #right-column {
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: #F5F5F5;
+    /* padding-top: 14vh; */
 }
 
 .modal-header {
