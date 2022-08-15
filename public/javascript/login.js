@@ -16,12 +16,12 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
     }
 }
 
-// document.querySelector('#password-login').addEventListener('click', setCursor)
+
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
