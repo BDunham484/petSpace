@@ -87,7 +87,6 @@ main {
 #left-column {
     min-height: 100vh;
     background-color: #F5F5F5;
-    /* padding-top: 14vh; */
 }
 
 #center-column {
@@ -99,7 +98,7 @@ main {
 #right-column {
     min-height: 100vh;
     background-color: #F5F5F5;
-    /* padding-top: 14vh; */
+
 }
 
 .modal-header {
