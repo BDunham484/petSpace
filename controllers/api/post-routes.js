@@ -86,8 +86,8 @@ router.post('/', withAuth, (req, res) => {
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
-    created_at: req.body.created_at
-    
+    created_at: req.body.created_at,
+    post_image: req.files.post_image
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
