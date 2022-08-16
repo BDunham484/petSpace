@@ -14,12 +14,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex flex-column align-items-center">
-                        {{!-- <div class="mb-3 form-elements col-10">
-                            <form action="/" method="post" enctype="multipart/form-data"
+                        <div class="mb-3 form-elements col-10">
+                            <form action="/views/dashboard.handlebars" method="post" enctype="multipart/form-data"
                             <h3>Upload Pet Picture</h3>
                             <input type="file" name="sampleFile" accept="image/*"/>
-                            <input type="submit" class="btn btn-secondary"/>
-                        </div> --}}
+                            <input type="submit" class='btn btn-secondary'>
+                        </div>
                         <div class="mb-3 form-elements col-10">
                             <label for="pet-name" class="form-label">What's your pet's name?</label>
                             <input type="text" class="form-control" id="pet-name" placeholder="petName">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-info text-white bg-gradient" id="create-post">Create post</button>
+                        <button type="submit" class="btn btn-info text-white bg-gradient" id="create-post">Create post</button>
                     </div>
                 </div>
             </div>

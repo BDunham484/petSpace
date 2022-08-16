@@ -30,11 +30,10 @@ app.set('view engine', 'handlebars');
 app.use(session(sess));
 
 //default option for fileupload
-app.use(fileUpload({
-    //parameters for docuemntation check later
-}))
+app.use(fileUpload())
+    //parameters for docuemntation check later))
 
-app.post('', (req, res) => {
+app.post('dashboard', (req, res) => {
     let sampleFile
     let uploadPath
 
