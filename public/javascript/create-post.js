@@ -3,10 +3,12 @@ async function createPostHandler(event) {
 
     console.log('new post button clicked')
 
-    const post_image = document.querySelector('#post-image').value.trim();
+    const post_image = document.querySelector('#post-image').value.trim()
     const post_text = document.querySelector('#post-text').value.trim();
     const pet_name = document.querySelector('#pet-name').value.trim();
     const pet_type = document.querySelector('#pet-type').value.trim();
+
+    console.log(post_image)
 
     if (post_image && pet_name && pet_type) {
         const response = await fetch('/api/posts', {
@@ -30,4 +32,4 @@ async function createPostHandler(event) {
 }
 
 
-document.querySelector('#create-post').addEventListener('click', createPostHandler);
+document.querySelector('.modal-wrapper').addEventListener('submit', createPostHandler);

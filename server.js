@@ -34,23 +34,34 @@ app.set('view engine', 'handlebars');
 app.use(fileUpload())
     //parameters for docuemntation check later))
 
-app.post('dashboard', (req, res) => {
-    let sampleFile
-    let uploadPath
+// app.get('', (req, res) => {
+//     res.render('dashboard')
+// })
 
-    if(!req.files || Objest.keys(req.files).length === 0) {
-        return res.status(400).send('No files were uploaded.')
-    }
+// app.post('dashboard', (req, res) => {
+//     let sampleFile
+//     let uploadPath
 
-    sampleFile = req.files.sampleFile
-    console.log(sampleFile)
-})
+//     if(!req.files || Objest.keys(req.files).length === 0) {
+//         return res.status(400).send('No files were uploaded.')
+//     }
+
+//     sampleFile = req.files.sampleFile
+//     console.log(sampleFile)
+
+//     sampleFile = req.files.sampleFile
+//     uploadPath =__dirname +'/upload' + sampleFile.name
+
+//     sampleFile.mv(uploadPath, function(err) {
+//         if(err) return res.status(500).send(err)
+//     })
+// })
 
 
 // turn on routes
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
