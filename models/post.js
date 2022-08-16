@@ -42,14 +42,14 @@ Post.init(
         },
         pet_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 len: [1]
             }
         },
         pet_type: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
 
         },
         user_id: {

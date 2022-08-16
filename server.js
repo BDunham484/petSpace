@@ -5,6 +5,9 @@ const path = require('path');
 const helpers = require('./utils/helpers')
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
+const fileUpload = require('express-fileupload');
+// const bodyparser = require('body-parser');
+// const multer = require('multer');
 
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -22,15 +25,25 @@ const sess = {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// body-parser middleware use
+// app.use(bodyparser.json())
+// app.use(bodyparser.urlencoded({
+//     extended: true
+// }))
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
+app.use(fileUpload());
+//templating engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // turn on routes
 app.use(routes);
+
+
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
