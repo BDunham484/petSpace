@@ -4,7 +4,6 @@ const { Post, User, Like, Comment } = require('../../models')
 
 router.get('/', (req, res) => {
   Post.findAll({
-    // order: [['created_at', sequelize.fn('RAND')]],
     attributes: [
       'id',
       'post_image',
