@@ -1,8 +1,5 @@
 <div class="row dashboard-row">
     <section class="col-2 d-flex flex-column align-items-center" id="left-column">
-        {{!-- Create New Post/Modal Button --}}
-        {{!-- <button type="submit" class="btn mt-5" id="create-new-post" data-bs-toggle="modal"
-            data-bs-target="#create-post-modal">+ Create new post</button> --}}
 
         <!-- Modal -->
         <div class="modal fade" id="create-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -41,29 +38,44 @@
         </div>
     </section>
     <section class="col-8" id="center-column">
-        {{#if posts.length}}
-        <section>
-            <h2>Your Posts:</h2>
-            <ul class="post-list  d-flex flex-column align-items-center">
-                {{#each posts as |post|}}
-                <div class="d-grid gap-2 col-7 mt-5 mx-auto">
-                    <a class="btn btn-warning bg-gradient" href="/dashboard/edit/{{id}}" role="button">Edit Post</a>
-                </div>
+        <a href="/dashboard" class="refresh"> &larr; Back to dashboard</a>
+        <h2>
+            Edit Post
+        </h2>
+        <div class="card col-7 mx-auto my-3" id="#{{post.id}}">
+            <div class="card-header">
+                <input type="text" name="pet-name" class="form-control" value="{{post.pet_name}}"> the
+                <input type="text" name="pet_type" class="form-control" value="{{post.pet_type}}">
+                <span class="card-subtitle mb-2 text-muted"> w/
+                    {{post.user.username}}</span>
+                <p class="mb-2 text-muted">{{format_date post.created_at}}</p>
+            </div>
 
-                <li>
-                    {{> post-info post}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-        {{/if}}
+            <img src="https://image.shutterstock.com/image-illustration/404-error-page-not-found-600w-308387615.jpg"
+                class="card-img-top" alt="...">
+            <hr class="border border-dark border-1 opacity-25 col-12">
+            <div class="card-body">
+                <textarea id="post-text" class="form-control">{{post.post_text}}</textarea>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button onclick="likeClickHandler(this)" class="like-btn btn btn-info bg-gradient"
+                    data-id={{post.id}}>{{post.liked_count}} {{format_plural "Like" post.liked_count}}</button>
+
+                <a href="/post/{{post.id}}" class="btn btn-secondary bg-gradient">{{post.comments.length}}
+                    {{format_plural "Comment" post.comments.length}}</a>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-8 my-5 mx-auto">
+            <button type="submit" class="btn btn-info bg-gradient">Save post</button>
+            <button type="button" class="btn btn-warning bg-gradient">Delete post</button>
+        </div>
+        
     </section>
     <section class="col-2" id="right-column">
 
     </section>
 
 </div>
-
 
 <script src="/javaScript/create-post.js"></script>
 <script src="/javascript/like.js"></script>
