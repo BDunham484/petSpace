@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 //POST api/comments
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // check the session
     if (req.session) {
         //if session access comment model and run .create() method
