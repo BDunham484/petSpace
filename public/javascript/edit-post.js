@@ -1,9 +1,11 @@
 async function editFormHandler(event) {
     event.preventDefault();
 
-    const post_text = document.querySelector('textarea[id="post-text"]').value.trim();
-    const pet_name = document.querySelector('input[name="pet-name"]').value;
-    const pet_type = document.querySelector('input[name="pet-type"]').value;
+    console.log('save button clicked');
+    const post_text = document.querySelector('textarea[name="post-text"]').value.trim();
+    const pet_name = document.querySelector('input[name="pet-name"]').value.trim();
+    const pet_type = document.querySelector('input[name="pet-type"]').value.trim();
+
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];

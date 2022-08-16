@@ -112,7 +112,9 @@ router.put('/like', (req, res) => {
 router.put('/:id', (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      pet_name: req.body.pet_name,
+      pet_type: req.body.pet_type,
+      post_text: req.body.post_text
     },
     {
       where: {
