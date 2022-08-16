@@ -8,22 +8,21 @@ async function createPostHandler(event) {
     const pet_name = document.querySelector('#pet-name').value.trim();
     const pet_type = document.querySelector('#pet-type').value.trim();
 
-    if (post_image && post_text) {
+    if (post_image && pet_name && pet_type) {
         const response = await fetch('/api/posts', {
             method: 'post',
             body: JSON.stringify({
-                // user_id,
                 post_image,
                 post_text,
                 pet_name,
                 pet_type,
-                // created_at
             }),
             headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
             console.log("post received")
+            window.location.reload();
         } else {
             alert(response.statusText);
         }

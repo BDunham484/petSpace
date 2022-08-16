@@ -1,8 +1,8 @@
 <div class="row dashboard-row">
     <section class="col-2 d-flex flex-column align-items-center" id="left-column">
         {{!-- Create New Post/Modal Button --}}
-        <button type="submit" class="btn mt-5" id="create-new-post" data-bs-toggle="modal"
-            data-bs-target="#create-post-modal">+ Create new post</button>
+        {{!-- <button type="submit" class="btn mt-5" id="create-new-post" data-bs-toggle="modal"
+            data-bs-target="#create-post-modal">+ Create new post</button> --}}
 
         <!-- Modal -->
         <div class="modal fade" id="create-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -35,7 +35,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-info text-white bg-gradient" id="create-post">Create post</button>
+                        <button type="button" class="btn btn-info text-white bg-gradient" id="create-post">Create
+                            post</button>
+
                     </div>
                 </div>
             </div>
@@ -44,12 +46,15 @@
     <section class="col-8" id="center-column">
         {{#if posts.length}}
         <section>
-            <h2>Your Dashboard</h2>
-            <ul class="post-list">
+            <h2>Your Posts:</h2>
+            <ul class="post-list  d-flex flex-column align-items-center">
                 {{#each posts as |post|}}
+                <div class="d-grid gap-2 col-8 mt-5 mx-auto">
+                    <a class="btn btn-warning bg-gradient" href="/dashboard/edit/{{id}}" role="button">Edit Post</a>
+                </div>
+
                 <li>
                     {{> post-info post}}
-                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a>
                 </li>
                 {{/each}}
             </ul>
@@ -64,3 +69,4 @@
 
 
 <script src="/javaScript/create-post.js"></script>
+<script src="/javascript/like.js"></script>
