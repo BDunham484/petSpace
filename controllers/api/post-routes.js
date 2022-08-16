@@ -1,6 +1,7 @@
-const router = require('express').Router()
-const sequelize = require('../../config/connection')
-const { Post, User, Like, Comment } = require('../../models')
+const router = require('express').Router();
+const sequelize = require('../../config/connection');
+const { Post, User, Like, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Post.findAll({
@@ -77,11 +78,11 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
-  console.log(req.files)
+router.post('/', withAuth, (req, res) => {
+  console.log(req.body)
   Post.create({
     user_id: req.session.user_id,
-    post_image: req.files.post_image,
+    post_image: req.body.post_image,
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
@@ -95,7 +96,7 @@ router.post('/', (req, res) => {
     })
 })
 
-router.put('/like', (req, res) => {
+router.put('/like', withAuth, (req, res) => {
   //make sure session exists
   if (req.session) {
     Post.like({ ...req.body, user_id: req.session.user_id}, { Like, Comment, User })
@@ -108,7 +109,7 @@ router.put('/like', (req, res) => {
   
 })
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       pet_name: req.body.pet_name,
@@ -134,7 +135,7 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
