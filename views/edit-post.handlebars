@@ -42,12 +42,12 @@
         <h2>
             Edit Post
         </h2>
-
+        
         <form class="edit-post-form">
             <div class="card col-7 mx-auto my-3" id="#{{post.id}}">
                 <div class="card-header">
                     <input type="text" name="pet-name" class="form-control" value="{{post.pet_name}}"> the
-                    <input type="text" name="pet_type" class="form-control" value="{{post.pet_type}}">
+                    <input type="text" name="pet-type" class="form-control" value="{{post.pet_type}}">
                     <span class="card-subtitle mb-2 text-muted"> w/
                         {{post.user.username}}</span>
                     <p class="mb-2 text-muted">{{format_date post.created_at}}</p>
@@ -57,7 +57,7 @@
                     class="card-img-top" alt="...">
                 <hr class="border border-dark border-1 opacity-25 col-12">
                 <div class="card-body">
-                    <textarea id="post-text" class="form-control">{{post.post_text}}</textarea>
+                    <textarea id="post-text" name="post-text" class="form-control">{{post.post_text}}</textarea>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
                     <button onclick="likeClickHandler(this)" class="like-btn btn btn-info bg-gradient"
@@ -66,10 +66,11 @@
                     <a href="/post/{{post.id}}" class="btn btn-secondary bg-gradient">{{post.comments.length}}
                         {{format_plural "Comment" post.comments.length}}</a>
                 </div>
+
             </div>
             <div class="d-grid gap-2 col-8 my-5 mx-auto">
                 <button type="submit" class="btn btn-info bg-gradient">Save post</button>
-                <button type="button" class="btn btn-warning bg-gradient">Delete post</button>
+                <button type="button" class="btn btn-warning bg-gradient delete-post-btn">Delete post</button>
             </div>
         </form>
 
@@ -83,3 +84,5 @@
 
 <script src="/javaScript/create-post.js"></script>
 <script src="/javascript/like.js"></script>
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
