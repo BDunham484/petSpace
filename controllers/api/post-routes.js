@@ -4,13 +4,14 @@ const { Post, User, Like, Comment } = require('../../models')
 
 router.get('/', (req, res) => {
   Post.findAll({
-    order: [['created_at', sequelize.fn('RAND')]],
     attributes: [
       'id',
-      'post_url',
-      'title',
+      'post_image',
+      'post_text',
+      'pet_name',
+      'pet_type',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM `like` WHERE post.id = `like`.post_id)'), 'liked_count']
     ],
     include: [
       {
@@ -41,10 +42,12 @@ router.get('/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
-      'title',
+      'post_image',
+      'post_text',
+      'pet_name',
+      'pet_type',
       'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = like.post_id)'), 'like_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM `like` WHERE post.id = `like`.post_id)'), 'liked_count']
     ],
     include: [
       {
@@ -92,19 +95,25 @@ router.post('/', (req, res) => {
     })
 })
 
-router.put('/upvote', (req, res) => {
-  Post.upvote(req.body, { Vote })
-    .then(updatedPostData => res.json(updatedPostData))
+router.put('/like', (req, res) => {
+  //make sure session exists
+  if (req.session) {
+    Post.like({ ...req.body, user_id: req.session.user_id}, { Like, Comment, User })
+    .then(updatedLikeData => res.json(updatedLikeData))
     .catch(err => {
       console.log(err);
       res.status(400).json(err)
     })
+  }
+  
 })
 
 router.put('/:id', (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      pet_name: req.body.pet_name,
+      pet_type: req.body.pet_type,
+      post_text: req.body.post_text
     },
     {
       where: {

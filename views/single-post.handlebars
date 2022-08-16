@@ -40,27 +40,72 @@
             </div>
         </div>
     </section>
+
     <section class="col-8" id="center-column">
-        {{#if posts.length}}
-        <section>
-            <h2 class="text-center">Look at all these pets!</h2>
-            <ul class="post-list  d-flex flex-column align-items-center">
-                {{#each posts as |post|}}
-                {{!-- <a href="/dashboard/edit/{{id}}">Edit post</a> --}}
-                <li>
-                    {{> post-info post}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-        {{/if}}
+        <h2>Look at all these pets!</h2>
+        <ul class="post-list d-flex flex-column align-items-center">
+            <li>
+                <div class="card col-10 mx-auto my-3" id="#{{post.id}}">
+                    <div class="card-header">
+                        <h5>{{post.pet_name}} the {{post.pet_type}}<span class="card-subtitle mb-2 text-muted"> w/
+                                {{post.user.username}}</span></h5>
+                        <p class="mb-2 text-muted">{{format_date post.created_at}}</p>
+                    </div>
+
+                    <img src="https://image.shutterstock.com/image-illustration/404-error-page-not-found-600w-308387615.jpg"
+                        class="card-img-top" alt="...">
+                    <hr class="border border-dark border-1 opacity-25 col-12">
+                    <div class="card-body">
+                        <p class="card-text">{{post.post_text}}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <button onclick="likeClickHandler(this)" class="like-btn btn btn-info bg-gradient"
+                            data-id={{post.id}}>{{post.liked_count}} {{format_plural "Like"
+                            post.liked_count}}</button>
+                        <a href="/post/{{post.id}}" class="btn btn-secondary bg-gradient">{{post.comments.length}} {{format_plural
+                            "Comment"
+                            post.comments.length}}</a>
+                    </div>
+                </div>
+
+                <div class="card text-center my-5">
+                    <div class="card-header">
+                        Add comment
+                    </div>
+                    <div class="card-body">
+                        <div class="form-floating my-5">
+                            <textarea class="form-control" placeholder="Leave a comment here"
+                                id="comment-body"></textarea>
+                            <label for="domment-body">Comments</label>
+                        </div>
+                        <a href="#" class="btn btn-info bg-gradient mb-3 comment-btn">Add comment</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        2 days ago
+                    </div>
+                </div>
+
+                <div class="comments">
+                    {{#each post.comments}}
+                    <div class="card mb-2">
+                        <div class="card-header">
+                            {{user.username}} on {{format_date created_at}}
+                        </div>
+                        <div class="card-body">
+                            {{comment_text}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </li>
+        </ul>
     </section>
+
     <section class="col-2" id="right-column">
 
     </section>
-
 </div>
 
-
 <script src="/javaScript/create-post.js"></script>
+<script src="/javascript/comment.js"></script>
 <script src="/javascript/like.js"></script>
