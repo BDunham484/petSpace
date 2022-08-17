@@ -34,22 +34,22 @@ Post.init(
             autoIncrement: true
         },
         post_image: {
-            type: DataTypes.STRING
+            type: DataTypes.JSON
         },
         post_text: {
             type: DataTypes.STRING,
-            allowNull: true
+            // allowNull: true
         },
         pet_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 len: [1]
             }
         },
         pet_type: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
 
         },
         user_id: {

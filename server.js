@@ -5,8 +5,9 @@ const path = require('path');
 const helpers = require('./utils/helpers')
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({ helpers });
-const bodyParser = require('express-fileupload');
-var cors = require('cors');
+const fileUpload = require('express-fileupload');
+var bodyParser = require('body-parser');
+// var cors = require('cors');
 
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -22,9 +23,9 @@ const sess = {
 };
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001; 
 
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser());
 app.use(fileUpload({
     
@@ -40,6 +41,6 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
