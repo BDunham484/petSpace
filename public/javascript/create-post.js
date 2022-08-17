@@ -11,25 +11,26 @@ async function createPostHandler(event) {
 
     const formData = new FormData();
     console.log(post_image)
-    console.log(post_image.files);
+    console.log(post_image.files[0]);
 
     formData.append('post_image', post_image.files[0]);
+    console.log(formData);
 
-
-    
-
+    let test = post_image.files[0]
+    console.log(test)
     // if (post_image && pet_name && pet_type) {
     if (post_image) {
         const response = await fetch('/api/posts', {
             method: 'post',
             body: JSON.stringify({
-                // formData,
+                // test,
+                formData,
                 post_text,
                 pet_name,
                 pet_type,
             }),
             // body: formData,
-            
+            headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
