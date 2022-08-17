@@ -34,7 +34,7 @@ Post.init(
             autoIncrement: true
         },
         post_image: {
-            type: DataTypes.JSON
+            type: DataTypes.STRING
         },
         post_text: {
             type: DataTypes.STRING,

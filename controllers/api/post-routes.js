@@ -79,17 +79,18 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log(req.body)
+  console.log(req.files)
   Post.create({
     user_id: req.session.user_id,
-    post_image: req.body.post_image,
-    post_text: req.body.post_text,
-    pet_name: req.body.pet_name,
-    pet_type: req.body.pet_type,
-    created_at: req.body.created_at,
+    post_image: req.files.post_image,
+    // post_text: req.body.post_text,
+    // pet_name: req.body.pet_name,
+    // pet_type: req.body.pet_type,
+    // created_at: req.body.created_at,
     // post_image: req.files.post_image
   })
-    .then(dbPostData => res.json(dbPostData))
+    // .then(dbPostData => res.json(dbPostData))
+    .then(dbPostData => console.log(dbPostData))
     .catch(err => {
       console.log(err)
       res.status(500).json(err)
