@@ -8,6 +8,9 @@ async function createPostHandler(event) {
     const pet_name = document.querySelector('#pet-name').value.trim();
     const pet_type = document.querySelector('#pet-type').value.trim();
 
+    const id = (Math.random());
+    // console.log('iiiiiiiiiiiiiiiiiiiiidddddddddddddddd' + id);
+
     const formData = new FormData();
     formData.append('post_image', post_image.files[0]);
 
@@ -32,7 +35,7 @@ async function createPostHandler(event) {
     }
 
     const config2 = {
-        method: 'post',
+        method: 'put',
         body: JSON.stringify({
             post_text,
             pet_name,
@@ -41,7 +44,7 @@ async function createPostHandler(event) {
         headers: { 'Content-Type': 'application/json' }
     }
 
-    const requests = [fetch('/api/posts', config1), fetch('/api/posts', config2)];
+    const requests = [fetch(`/api/posts/newPost/${id}`, config1), fetch(`/api/posts/newPost/${id}`, config2)];
 
     // const [response1, response2] = await Promise.all(requests)
     const response = await Promise.all(requests)
@@ -52,12 +55,12 @@ async function createPostHandler(event) {
 
 
 
-    // if (response.ok) {
-    //     console.log('holy shit!');
-    //     window.location.reload();
-    // } else {
-    //     alert(response.statusText);
-    // }
+    if (response.ok) {
+        console.log('holy shit!');
+        window.location.reload();
+    } else {
+        alert(response.statusText);
+    }
 
 
 

@@ -119,7 +119,7 @@ router.get('/:id', (req, res) => {
 
 
 
-router.post('/', (req, res) => {
+router.post('/newPost/:id', (req, res) => {
   console.log('req.files!!!!!!!!!!!!!!!!!!!!!');
   console.log(req.files);
   console.log('req.body!!!!!!!!!!!!!!!!!');
@@ -148,15 +148,45 @@ router.post('/', (req, res) => {
   Post.create({
     user_id: req.session.user_id,
     post_image: hope,
-    post_text: req.body.post_text,
-    pet_name: req.body.pet_name,
-    pet_type: req.body.pet_type,
+    post_text: "",
+    pet_name: "",
+    pet_type: "",
     created_at: req.body.created_at,
   })
 
   // .then(dbPostData => res.json(dbPostData))
   .then(dbPostData => {
-    console.log('dbPostData!!!!!!!!!!!!!')
+    console.log('1111111111111111111dbPostData!!!!!!!!!!!!!')
+    console.log(dbPostData);
+
+    // res.json(dbPostData);
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json(err)
+  })
+});
+// });
+
+router.put('/newPost/:id', (req, res) => {
+  console.log('PUT!!!!!!!!!!!!REQ.BODY!!!!!!!!!!');
+  console.log(req.body)
+
+  Post.update({
+    post_text: req.body.post_text,
+    pet_name: req.body.pet_name,
+    pet_type: req.body.pet_type,
+    created_at: req.body.created_at,
+  },
+  {
+    where: {
+      id: req.params.id
+    },
+  }
+  
+  )
+  .then(dbPostData => {
+    console.log('22222222222222222222dbPostData!!!!!!!!!!!!!')
     console.log(dbPostData);
 
     res.json(dbPostData);
@@ -165,8 +195,18 @@ router.post('/', (req, res) => {
     console.log(err)
     res.status(500).json(err)
   })
-});
-// });
+})
+
+
+
+
+
+
+
+
+
+
+
 
 router.put('/like', (req, res) => {
   //make sure session exists

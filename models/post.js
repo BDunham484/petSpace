@@ -43,9 +43,9 @@ Post.init(
         pet_name: {
             type: DataTypes.STRING,
             // allowNull: false,
-            validate: {
-                len: [1]
-            }
+            // validate: {
+            //     len: [1]
+            // }
         },
         pet_type: {
             type: DataTypes.STRING,
