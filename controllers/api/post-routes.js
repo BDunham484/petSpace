@@ -84,11 +84,11 @@ router.get('/:id', (req, res) => {
 //   Post.create({
 //     user_id: req.session.user_id,
 //     post_image: req.files.post_image,
-//     // post_text: req.body.post_text,
-//     // pet_name: req.body.pet_name,
-//     // pet_type: req.body.pet_type,
-//     // created_at: req.body.created_at,
-//     // post_image: req.files.post_image
+//     post_text: req.body.post_text,
+//     pet_name: req.body.pet_name,
+//     pet_type: req.body.pet_type,
+//     created_at: req.body.created_at,
+//     post_image: req.files.post_image
 //   })
 //     // .then(dbPostData => res.json(dbPostData))
 //     .then(dbPostData => {
@@ -103,32 +103,55 @@ router.get('/:id', (req, res) => {
 //     })
 // })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 router.post('/', (req, res) => {
   console.log('req.files!!!!!!!!!!!!!!!!!!!!!');
   console.log(req.files);
+  console.log('req.body!!!!!!!!!!!!!!!!!');
+  console.log(req.body);
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
 
   let post_image = req.files.post_image;
-  console.log('post_iamge!!!!!!!!!!!!');
-  console.log(post_image);
-  let uploadPath = __dirname + '/upload/' + post_image.name;
+  // console.log('post_iamge!!!!!!!!!!!!');
+  // console.log(post_image);
+
+  // let uploadPath = __dirname + '/upload/' + post_image.name;
   // let uploadPath = '/images/upload/' + post_image.name;
-  console.log('uploadPath!!!!!!!!!!!!!');
-  console.log(uploadPath);
+  // console.log('uploadPath!!!!!!!!!!!!!');
+  // console.log(uploadPath);
 
   let b64 = Buffer.from(post_image.data).toString('base64');
   let mimeType = 'image/png';
   let hope = `data:${mimeType};base64,${b64}`
   
-  post_image.mv(uploadPath, function (err) {
-    if (err) return res.status(500).send(err);
-  });
+  // post_image.mv(uploadPath, function (err) {
+  //   if (err) return res.status(500).send(err);
+  // });
 
   Post.create({
     user_id: req.session.user_id,
-    post_image: hope
+    post_image: hope,
+    post_text: req.body.post_text,
+    pet_name: req.body.pet_name,
+    pet_type: req.body.pet_type,
+    created_at: req.body.created_at,
   })
 
   // .then(dbPostData => res.json(dbPostData))
