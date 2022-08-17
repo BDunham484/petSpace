@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "An MVC style social media site with a focus on pets.",
   "main": "server.js",
-  "start": "node server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -21,12 +20,15 @@
   "homepage": "https://github.com/BDunham484/petSpace#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
     "bootstrap-icons": "^1.9.1",
     "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
   },

@@ -78,16 +78,17 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   console.log(req.body)
   Post.create({
     user_id: req.session.user_id,
-    post_image: req.body.post_image,
+    post_image: req.files.formData,
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
-    created_at: req.body.created_at
+    created_at: req.body.created_at,
     
+    // post_image: req.files.post_image
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -96,7 +97,7 @@ router.post('/', withAuth, (req, res) => {
     })
 })
 
-router.put('/like', withAuth, (req, res) => {
+router.put('/like', (req, res) => {
   //make sure session exists
   if (req.session) {
     Post.like({ ...req.body, user_id: req.session.user_id}, { Like, Comment, User })

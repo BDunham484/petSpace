@@ -3,20 +3,33 @@ async function createPostHandler(event) {
 
     console.log('new post button clicked')
 
-    const post_image = document.querySelector('#post-image').value.trim();
+    // const post_image = document.querySelector('input[type="file"]').value.trim();
+    const post_image = document.getElementById('post-image');
     const post_text = document.querySelector('#post-text').value.trim();
     const pet_name = document.querySelector('#pet-name').value.trim();
     const pet_type = document.querySelector('#pet-type').value.trim();
 
-    if (post_image && pet_name && pet_type) {
+    const formData = new FormData();
+    console.log(post_image)
+    console.log(post_image.files[0]);
+
+    formData.append('post_image', post_image.files[0]);
+    console.log(formData);
+
+    let test = post_image.files[0]
+    console.log(test)
+    // if (post_image && pet_name && pet_type) {
+    if (post_image) {
         const response = await fetch('/api/posts', {
             method: 'post',
             body: JSON.stringify({
-                post_image,
+                // test,
+                formData,
                 post_text,
                 pet_name,
                 pet_type,
             }),
+            // body: formData,
             headers: { 'Content-Type': 'application/json' }
         });
 
@@ -30,4 +43,4 @@ async function createPostHandler(event) {
 }
 
 
-document.querySelector('#create-post').addEventListener('click', createPostHandler);
+document.querySelector('#create-post').addEventListener('submit', createPostHandler);
