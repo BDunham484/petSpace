@@ -145,6 +145,7 @@ router.post('/newPost/:id', (req, res) => {
 
   Post.create({
     user_id: req.session.user_id,
+    post_id: req.params.id,
     post_image: hope,
     post_text: "",
     pet_name: "",
@@ -178,10 +179,11 @@ router.put('/newPost/:id', (req, res) => {
   Post.update(
     {
       where: {
-        id: req.params.id
-      },
+        post_id: req.params.id
+      }
     },
     {
+    post_id: req.params.id,
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
