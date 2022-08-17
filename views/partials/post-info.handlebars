@@ -1,0 +1,22 @@
+<div class="card col-10 mx-auto my-3" id="#{{id}}">
+    <div class="card-header">
+        <h5>{{pet_name}} the {{pet_type}}<span class="card-subtitle mb-2 text-muted"> w/
+                {{user.username}}</span></h5>
+        <p class="mb-2 text-muted">{{format_date created_at}}</p>
+    </div>
+
+    <img src="https://image.shutterstock.com/image-illustration/404-error-page-not-found-600w-308387615.jpg"
+        class="card-img-top" alt="...">
+    <hr class="border border-dark border-1 opacity-25 col-12">
+    <div class="card-body">
+        <p class="card-text">{{post_text}}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button onclick="likeClickHandler(this)" class="like-btn btn btn-info bg-gradient" data-id={{id}}>{{liked_count}}  {{format_plural "Like"
+            liked_count}}</button>
+        {{!-- {{liked_count}} <button onclick="likeClickHandler(this)" class="like-btn" data-id="{{id}}"><i
+                class="bi bi-star" id="not-liked"></i>
+            <i class="bi bi-star-fill" id="liked"></i></button> --}}
+        <a href="/post/{{id}}" class="btn btn-secondary bg-gradient">{{comments.length}} {{format_plural "Comment" comments.length}}</a>
+    </div>
+</div>

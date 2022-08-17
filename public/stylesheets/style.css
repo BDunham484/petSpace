@@ -1,0 +1,151 @@
+/* UNIVERSAL/GLOBAL STYLES START*/
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+    background-color: #F3F5F6;
+}
+
+.navbar-brand
+{
+    position: relative;
+    background: url(../images/logo.png);
+    width: 170px;   
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* UNIVERSAL/GLOBAL STYLES END */
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* NAVBAR STYLES START */
+
+/* NAVBAR STYLES STOP */
+
+/* MAIN STYLES START */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+/* MAIN STYLES END */
+
+/* LOGIN STYLES START */
+#login-form {
+    width: 50vw;
+    min-height: 50vh;
+    background-color: aliceblue !important;
+    border-radius: 20px;
+}
+
+#password-login {
+    font-family: FontAwesome;
+}
+
+#email-login {
+    font-family: FontAwesome;
+}
+
+/* LOGIN STYLES END */
+
+/* SIGNUP STYLES START */
+#signup-form {
+    width: 50vw;
+    min-height: 50vh;
+    background-color: aliceblue !important;
+    border-radius: 20px;
+}
+
+#username-signup {
+    font-family: FontAwesome;
+}
+
+#password-signup {
+    font-family: FontAwesome;
+}
+
+#email-signup {
+    font-family: FontAwesome;
+}
+/* SIGNUP STYLES END */
+
+/* DASHBOARD STYLES START */
+.dashboard-row {
+    width: 100%;
+    height: 100%;
+}
+
+#left-column {
+    min-height: 100vh;
+    background-color: #F5F5F5;
+}
+
+#center-column {
+    min-height: 90vh;
+    background-color: white;
+    padding-top: 14vh;
+}
+
+#right-column {
+    min-height: 100vh;
+    background-color: #F5F5F5;
+
+}
+
+.modal-header {
+    background-color: #F5F5F5;
+}
+
+.modal-footer {
+    background-color: #F5F5F5 !important;
+}
+
+.post-list {
+    list-style: none;
+}
+
+.card {
+    box-shadow: -5px 5px 5px #a2a0a0;
+}
+
+.card-header {
+    background-color: aliceblue !important;
+}
+
+.card-footer {
+    background-color: aliceblue !important;
+}
+
+#not-liked {
+    display: block;
+}
+
+#liked {
+    display: none;
+}
+
+/* DASHBOARD STYLES END */
+
+/* SINGLE POST STYLES START */
+
+/* SINGLE POST STYLES END */
