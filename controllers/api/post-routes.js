@@ -82,11 +82,11 @@ router.post('/', (req, res) => {
   console.log(req.body)
   Post.create({
     user_id: req.session.user_id,
-    post_image: req.files.formData,
-    post_text: req.body.post_text,
-    pet_name: req.body.pet_name,
-    pet_type: req.body.pet_type,
-    created_at: req.body.created_at,
+    post_image: req.body.test,
+    // post_text: req.body.post_text,
+    // pet_name: req.body.pet_name,
+    // pet_type: req.body.pet_type,
+    // created_at: req.body.created_at,
     
     // post_image: req.files.post_image
   })
