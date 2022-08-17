@@ -122,8 +122,6 @@ router.get('/:id', (req, res) => {
 router.post('/newPost/:id', (req, res) => {
   console.log('req.files!!!!!!!!!!!!!!!!!!!!!');
   console.log(req.files);
-  console.log('req.body!!!!!!!!!!!!!!!!!');
-  console.log(req.body);
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
@@ -152,6 +150,11 @@ router.post('/newPost/:id', (req, res) => {
     pet_name: "",
     pet_type: "",
     created_at: req.body.created_at,
+  },
+  {
+    where: {
+      id: req.params.id
+    }
   })
 
   // .then(dbPostData => res.json(dbPostData))
@@ -172,17 +175,19 @@ router.put('/newPost/:id', (req, res) => {
   console.log('PUT!!!!!!!!!!!!REQ.BODY!!!!!!!!!!');
   console.log(req.body)
 
-  Post.update({
+  Post.update(
+    {
+      where: {
+        id: req.params.id
+      },
+    },
+    {
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
     created_at: req.body.created_at,
   },
-  {
-    where: {
-      id: req.params.id
-    },
-  }
+  
   
   )
   .then(dbPostData => {

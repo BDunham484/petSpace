@@ -49,24 +49,17 @@ async function createPostHandler(event) {
     // const [response1, response2] = await Promise.all(requests)
     const response = await Promise.all(requests)
     .then(results => {
+        console.log('results!!!!!!!!!!!!!!!!!!!');
         console.log(results);
+        window.location.reload();
     })
 
-
-
-
-    if (response.ok) {
-        console.log('holy shit!');
-        window.location.reload();
-    } else {
-        alert(response.statusText);
-    }
-
-
-
-
-
-
+    // if (response.ok) {
+    //     console.log('holy shit!');
+    //     window.location.reload();
+    // } else {
+    //     alert(response.statusText);
+    // }
 
     // const incoming = await fetch('/api/posts', {
     //     method: 'post',
