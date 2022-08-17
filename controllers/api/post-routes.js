@@ -94,7 +94,7 @@ router.get('/:id', (req, res) => {
 //     .then(dbPostData => {
 //       console.log('dbPostData!!!!!!!!!!!!!')
 //       console.log(dbPostData);
-      
+
 //       res.json(dbPostData);
 //     })
 //     .catch(err => {
@@ -106,37 +106,57 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   console.log('req.files!!!!!!!!!!!!!!!!!!!!!');
   console.log(req.files);
-  if(!req.files || Object.keys(req.files).length === 0) {
+  if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
   }
 
-    let post_image = req.files.post_image;
-    console.log('post_iamge!!!!!!!!!!!!');
-    console.log(post_image); 
-    let uploadPath = __dirname + '/upload/' + post_image.name;
-    console.log('uploadPath!!!!!!!!!!!!!');
-    console.log(uploadPath);
+  let post_image = req.files.post_image;
+  console.log('post_iamge!!!!!!!!!!!!');
+  console.log(post_image);
+  let uploadPath = __dirname + '/upload/' + post_image.name;
+  // let uploadPath = '/images/upload/' + post_image.name;
+  console.log('uploadPath!!!!!!!!!!!!!');
+  console.log(uploadPath);
 
-    post_image.mv(uploadPath, function(err) {
-      if(err) return res.status(500).send(err);
-    })
+  let b64 = Buffer.from(post_image.data).toString('base64');
+  let mimeType = 'image/png';
+  let hope = `data:${mimeType};base64,${b64}`
+  
+  post_image.mv(uploadPath, function (err) {
+    if (err) return res.status(500).send(err);
+  });
 
-    res.send('File uploaded!!');
+  Post.create({
+    user_id: req.session.user_id,
+    post_image: hope
+  })
 
-})
+  // .then(dbPostData => res.json(dbPostData))
+  .then(dbPostData => {
+    console.log('dbPostData!!!!!!!!!!!!!')
+    console.log(dbPostData);
+
+    res.json(dbPostData);
+  })
+  .catch(err => {
+    console.log(err)
+    res.status(500).json(err)
+  })
+});
+// });
 
 router.put('/like', (req, res) => {
   //make sure session exists
   if (req.session) {
-    Post.like({ ...req.body, user_id: req.session.user_id}, { Like, Comment, User })
-    .then(updatedLikeData => res.json(updatedLikeData))
-    .catch(err => {
-      console.log(err);
-      res.status(400).json(err)
-    })
+    Post.like({ ...req.body, user_id: req.session.user_id }, { Like, Comment, User })
+      .then(updatedLikeData => res.json(updatedLikeData))
+      .catch(err => {
+        console.log(err);
+        res.status(400).json(err)
+      })
   }
-  
-}) 
+
+})
 
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
