@@ -2,11 +2,11 @@
 <h1 align="center">An MVC style social media site with a focus on pets <br> 🐶🐱</h1>
 
 ## Table of Contents 🔎
-- [Technologies](#technologies🦾)
-- [Installation](#Installation💾)
-- [Usage](#usage💻)
+- [Technologies](#technologies-🦾)
+- [Installation](#Installation-💾)
+- [Usage](#usage-💻)
 - [Contributing](#contributing)
-- [Screenshots](#screenshots📸)
+- [Screenshots](#screenshots-📸)
 
 ## Technologies 🦾
 ![Technologies](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=white)
@@ -28,7 +28,7 @@ with the following npm packages
 * `mysql2`
 * `sequelize`
 
-## Installation💾
+## Installation 💾
 ***Requirments***
 
 [Node.js](https://nodejs.org/en/) | [Inquirer](https://www.npmjs.com/package/inquirer) | [MySQL](https://www.npmjs.com/package/mysql2) | [Insomnia](https://insomnia.rest/)
@@ -46,10 +46,10 @@ with the following npm packages
 
 
 
-## Usage💻
+## Usage 💻
 App can be viewed at - [Heroku][1]! 
 
-## Screenshots📸
+## Screenshots 📸
 |<center><b>Sign Up</b>|<center><b>Sign In</b>|
 -|-
 ![][3]|![][4]
