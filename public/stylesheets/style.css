@@ -152,3 +152,31 @@ main {
 /* SINGLE POST STYLES START */
 
 /* SINGLE POST STYLES END */
+
+/* MEDIA QUERIES START */
+@media screen and (max-width: 800px) {
+    #login-form {
+        width: 90vw;
+        min-height: 50vh;
+    }
+
+    #signup-form {
+        width: 90vw;
+        min-height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #login-form {
+        width: 30vw;
+        min-height: 30vh;
+    }
+
+    #signup-form {
+        width: 30vw;
+        min-height: 30vh;
+    }
+}
+
+
+/* MEDIA QUERIES END */
