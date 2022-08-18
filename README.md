@@ -32,7 +32,7 @@ with the following npm packages
 ## Installation 💾
 ***Requirments***
 
-[Node.js](https://nodejs.org/en/) | [Inquirer](https://www.npmjs.com/package/inquirer) | [MySQL](https://www.npmjs.com/package/mysql2 | [Insomnia](https://insomnia.rest/)
+[Node.js](https://nodejs.org/en/) | [Inquirer](https://www.npmjs.com/package/inquirer) | [MySQL](https://www.npmjs.com/package/mysql2) | [Insomnia](https://insomnia.rest/)
 
 ***Once Installed:***
 * Clone the Repository on to your machine.
