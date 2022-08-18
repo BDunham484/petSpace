@@ -149,6 +149,8 @@ router.put('/like', (req, res) => {
         console.log(err);
         res.status(400).json(err)
       })
+  } else {
+    alert("You must be signed in to interact with posts.")
   }
 
 })
