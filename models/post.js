@@ -34,7 +34,7 @@ Post.init(
             autoIncrement: true
         },
         post_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.DECIMAL
         },
         post_image: {
             type: DataTypes.BLOB('long')

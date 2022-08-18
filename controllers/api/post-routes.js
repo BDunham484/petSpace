@@ -146,18 +146,13 @@ router.post('/newPost/:id', (req, res) => {
   Post.create({
     user_id: req.session.user_id,
     post_id: req.params.id,
+    // id: req.params.id,
     post_image: hope,
     post_text: "",
     pet_name: "",
     pet_type: "",
     created_at: req.body.created_at,
-  },
-  {
-    where: {
-      id: req.params.id
-    }
   })
-
   // .then(dbPostData => res.json(dbPostData))
   .then(dbPostData => {
     console.log('1111111111111111111dbPostData!!!!!!!!!!!!!')
@@ -178,18 +173,17 @@ router.put('/newPost/:id', (req, res) => {
 
   Post.update(
     {
-      where: {
-        post_id: req.params.id
-      }
-    },
-    {
-    post_id: req.params.id,
+    // post_id: req.params.id,
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
     created_at: req.body.created_at,
   },
-  
+  {
+    where: {
+      post_id: req.params.id
+    }
+  },
   
   )
   .then(dbPostData => {
