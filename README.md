@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/BDunham484/petSpace/blob/danny/public/images/logo.png"></p>
-<h1 align="center">An MVC style social media site with a focus on pets
-🐶🐱</h1>
+<h1 align="center">An MVC style social media site with a focus on pets </h1>
+🐶🐱
 
 ## Table of Contents 🔎
 - [Technologies](#technologies)
