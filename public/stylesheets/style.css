@@ -160,6 +160,24 @@ main {
     }
 }
 
+@media screen and (max-device-width: 768px) {
+    .card-dims {
+        width: 90vw;
+    }
+
+    #center-column {
+        padding-top: 21vh;
+    }
+}
+
+/* @media screen and (max-width: 768px) 
+and (orientation: landscape) {
+    
+    #center-column {
+        padding-top: 42vh;
+    }
+} */
+
 @media screen and (max-width: 800px) {
     #login-form {
         width: 90vw;
@@ -169,6 +187,23 @@ main {
     #signup-form {
         width: 90vw;
         min-height: 50vh;
+    }
+}
+
+@media screen and (max-width: 916px) 
+and (orientation: landscape) {
+    
+    #center-column {
+        padding-top: 42vh;
+    }
+}
+
+@media screen 
+and (min-device-width: 1024px)
+and (max-device-width: 1181px)
+and (orientation: landscape) {
+    #center-column {
+        padding-top: 20vh;
     }
 }
 
