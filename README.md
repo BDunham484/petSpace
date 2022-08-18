@@ -27,7 +27,7 @@ with the following npm packages
 * `express-session`
 * `mysql2`
 * `sequelize`
-
+ 
 ## Installation 💾
 ***Requirments***
 
