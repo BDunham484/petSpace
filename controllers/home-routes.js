@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models')
 
 // get all posts for dashboard
 router.get('/', (req, res) => {
+
     Post.findAll({
         order: [sequelize.fn('RAND')],
         attributes: [
@@ -38,14 +39,19 @@ router.get('/', (req, res) => {
             console.log(posts);
             res.render('homepage', {
                 posts,
-                loggedIn: true
+                loggedIn: true,
+
             })
+
+
         })
         .catch(err => {
             console.log(err);
-            // res.status(500).json(err);
+            res.status(500).json(err);
             res.redirect('/signup');
         });
+
+
 });
 
 router.get('/login', (req, res) => {
