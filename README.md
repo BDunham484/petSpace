@@ -15,7 +15,6 @@ An MVC style social media site with a focus on pets 🐶🐱
 ![Technologies](https://img.shields.io/badge/-Node.js-339933?logo=Node.js&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=white)
-![Technologies](https://img.shields.io/badge/-Inquirer-000000?logo=&logoColor=white)
 ![Technologies](https://img.shields.io/badge/-Insomnia-purple?logo=Insomnia&logoColor=white)
 
 with the following npm packages
@@ -57,10 +56,10 @@ App can be viewed at - [Heroku][1]!
 :octocat: [Max A](https://github.com/MKAtkinson)
 
 ## Screenshots 📸
-|<center><b>homepage</b>|<center><b>notes page with no notes</b>|
+|<center><b>Sign Up</b>|<center><b>Sign In</b>|
 -|-
 ![][3]|![][4]
-|<center><b>notes page with one stored note and creating a new one</b>|<center><b>notes page with two stored notes. viewing a stored note</b>|
+|<center><b>Homepage</b>|<center><b>Dashboard</b>|
 ![][5]|![][6]
 
 ___
