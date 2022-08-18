@@ -1,8 +1,5 @@
 <div class="row dashboard-row">
     <section class="col-2 d-flex flex-column align-items-center" id="left-column">
-        {{!-- Create New Post/Modal Button --}}
-        {{!-- <button type="submit" class="btn mt-5" id="create-new-post" data-bs-toggle="modal"
-            data-bs-target="#create-post-modal">+ Create new post</button> --}}
 
         <!-- Modal -->
         <form action="" method="POST" encType="multipart/form-data" id="create-post">
@@ -54,7 +51,6 @@
             <h2 class="text-center">Look at all these pets!</h2>
             <ul class="post-list  d-flex flex-column align-items-center">
                 {{#each posts as |post|}}
-                {{!-- <a href="/dashboard/edit/{{id}}">Edit post</a> --}}
                 <li>
                     {{> post-info post}}
                 </li>
@@ -69,6 +65,7 @@
 
 </div>
 
-
+{{#if loggedIn}}
 <script src="/javaScript/create-post.js"></script>
 <script src="/javascript/like.js"></script>
+{{/if}}

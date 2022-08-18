@@ -4,8 +4,11 @@ const { Post, User, Comment } = require('../models')
 
 // get all posts for dashboard
 router.get('/', (req, res) => {
-    console.log(req.body)
     Post.findAll({
+        where: {
+            // use the ID from the session
+            user_id: req.session.user_id
+        },
         order: [sequelize.fn('RAND')],
         attributes: [
             'id',
@@ -36,15 +39,15 @@ router.get('/', (req, res) => {
             const posts = dbPostData.map(post => post.get({
                 plain: true
             }));
-            console.log(posts)
+            console.log(posts);
             res.render('homepage', {
                 posts,
                 loggedIn: true
-            });
+            })
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            // res.status(500).json(err);
             res.redirect('/signup');
         });
 });
