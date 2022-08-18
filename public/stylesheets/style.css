@@ -144,6 +144,9 @@ main {
     display: none;
 }
 
+.card-dims {
+    width: 50vw;
+}
 /* DASHBOARD STYLES END */
 
 /* SINGLE POST STYLES START */
