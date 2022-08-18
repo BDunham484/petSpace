@@ -1,5 +1,5 @@
 <div class="row dashboard-row">
-    <section class="col-2 d-flex flex-column align-items-center" id="left-column">
+    <section class="d-none d-md-block col-md-2 d-flex flex-column align-items-center" id="left-column">
         
         <!-- Modal -->
         <form action="" method="POST" encType="multipart/form-data" id="create-post">
@@ -45,7 +45,7 @@
         </form>
         
     </section>
-    <section class="col-8" id="center-column">
+    <section class="col-12 col-md-8" id="center-column">
         {{#if posts.length}}
         <section>
             <h2 class="text-center mt-3">Look at all these pets!</h2>
@@ -59,7 +59,7 @@
         </section>
         {{/if}}
     </section>
-    <section class="col-2" id="right-column">
+    <section class="d-none d-md-block col-md-2" id="right-column">
 
     </section>
 
