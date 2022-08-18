@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             where: {
                 user_id: req.session.user_id
             },
-            order: [sequelize.fn('RAND')],
+            order: [['created_at', 'DESC']], 
             attributes: [
                 'id',
                 'user_id',
