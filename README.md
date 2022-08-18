@@ -1,4 +1,4 @@
-<h1 align="center">PetSpace 👋</h1>
+<p align="center"><img src="https://github.com/BDunham484/petSpace/blob/danny/public/images/logo.png"></p>
 
 An MVC style social media site with a focus on pets 🐶🐱
 
