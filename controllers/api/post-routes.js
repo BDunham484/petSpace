@@ -119,7 +119,7 @@ router.get('/:id', (req, res) => {
 
 
 
-router.post('/newPost/:id', (req, res) => {
+router.post('/newPost', (req, res) => {
   console.log('req.files!!!!!!!!!!!!!!!!!!!!!');
   console.log(req.files);
   if (!req.files || Object.keys(req.files).length === 0) {
@@ -145,7 +145,7 @@ router.post('/newPost/:id', (req, res) => {
 
   Post.create({
     user_id: req.session.user_id,
-    post_id: req.params.id,
+    // post_id: req.params.id,
     // id: req.params.id,
     post_image: hope,
     post_text: "",
@@ -158,7 +158,7 @@ router.post('/newPost/:id', (req, res) => {
     console.log('1111111111111111111dbPostData!!!!!!!!!!!!!')
     console.log(dbPostData);
 
-    // res.json(dbPostData);
+    res.json(dbPostData);
   })
   .catch(err => {
     console.log(err)
@@ -173,7 +173,6 @@ router.put('/newPost/:id', (req, res) => {
 
   Post.update(
     {
-    // post_id: req.params.id,
     post_text: req.body.post_text,
     pet_name: req.body.pet_name,
     pet_type: req.body.pet_type,
@@ -181,7 +180,7 @@ router.put('/newPost/:id', (req, res) => {
   },
   {
     where: {
-      post_id: req.params.id
+      id: req.params.id
     }
   },
   

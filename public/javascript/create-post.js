@@ -14,45 +14,61 @@ async function createPostHandler(event) {
     const formData = new FormData();
     formData.append('post_image', post_image.files[0]);
 
-    // if (post_image && pet_name && pet_type) {
+    if (post_image && pet_name && pet_type) {
 
-    //     const response = await fetch('/api/posts', {
-    //         method: 'post',
-    //         body: formData,
-    //     });
+        const response = await fetch('/api/posts/newPost', {
+            method: 'post',
+            body: formData,
+        })
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            let id = data.id;
+            return fetch(`/api/posts/newPost/${id}`, {
+                method: 'put',
+                body: JSON.stringify({
+                    post_text,
+                    pet_name,
+                    pet_type
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+        })
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err);
+        })
 
-    //     if (response.ok) {
-    //         console.log("image received")
-    //         window.location.reload();
-    //     } else {
-    //         alert(response.statusText);
-    //     }
+        
+    }
+
+    // const config1 = {
+    //     method: 'post',
+    //     body: formData
     // }
 
-    const config1 = {
-        method: 'post',
-        body: formData
-    }
+    // const config2 = {
+    //     method: 'put',
+    //     body: JSON.stringify({
+    //         post_text,
+    //         pet_name,
+    //         pet_type
+    //     }),
+    //     headers: { 'Content-Type': 'application/json' }
+    // }
 
-    const config2 = {
-        method: 'put',
-        body: JSON.stringify({
-            post_text,
-            pet_name,
-            pet_type
-        }),
-        headers: { 'Content-Type': 'application/json' }
-    }
+    // const requests = [fetch(`/api/posts/newPost/${id}`, config1), fetch(`/api/posts/newPost/${id}`, config2)];
 
-    const requests = [fetch(`/api/posts/newPost/${id}`, config1), fetch(`/api/posts/newPost/${id}`, config2)];
-
-    // const [response1, response2] = await Promise.all(requests)
-    const response = await Promise.all(requests)
-    .then(results => {
-        console.log('results!!!!!!!!!!!!!!!!!!!');
-        console.log(results);
-        window.location.reload();
-    })
+    // // const [response1, response2] = await Promise.all(requests)
+    // const response = await Promise.all(requests)
+    // .then(results => {
+    //     console.log('results!!!!!!!!!!!!!!!!!!!');
+    //     console.log(results);
+    //     window.location.reload();
+    // })
 
     // if (response.ok) {
     //     console.log('holy shit!');
