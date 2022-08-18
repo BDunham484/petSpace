@@ -68,5 +68,9 @@ ___
 
 ## Contributing
 :octocat: [Brad D](https://github.com/BDunham484)
+</br>
+
 :octocat: [Daniel A](https://github.com/dannyyyspam)
+</br>
+
 :octocat: [Max A](https://github.com/MKAtkinson)
