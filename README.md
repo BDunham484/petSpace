@@ -2,11 +2,11 @@
 <h1 align="center">An MVC style social media site with a focus on pets <br> 🐶🐱</h1>
 
 ## Table of Contents 🔎
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Technologies](#technologies-🦾)
+- [Installation](#Installation-💾)
+- [Usage](#usage-💻)
 - [Contributing](#contributing)
-
+- [Screenshots](#screenshots-📸)
 
 ## Technologies 🦾
 ![Technologies](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=white)
@@ -49,11 +49,6 @@ with the following npm packages
 ## Usage 💻
 App can be viewed at - [Heroku][1]! 
 
-## Contributing
-:octocat: [Brad D](https://github.com/BDunham484)
-:octocat: [Daniel A](https://github.com/dannyyyspam)
-:octocat: [Max A](https://github.com/MKAtkinson)
-
 ## Screenshots 📸
 |<center><b>Sign Up</b>|<center><b>Sign In</b>|
 -|-
@@ -69,3 +64,9 @@ ___
 [4]:https://github.com/BDunham484/petSpace/blob/danny/public/images/signIn.png
 [5]:https://github.com/BDunham484/petSpace/blob/danny/public/images/mainPage.png
 [6]:https://github.com/BDunham484/petSpace/blob/danny/public/images/yourDashboard.png
+
+
+## Contributing
+:octocat: [Brad D](https://github.com/BDunham484)
+:octocat: [Daniel A](https://github.com/dannyyyspam)
+:octocat: [Max A](https://github.com/MKAtkinson)
