@@ -1,5 +1,5 @@
 <div class="row dashboard-row">
-    <section class="col-2 d-flex flex-column align-items-center" id="left-column">
+    <section class="d-none d-md-block col-md-2 d-flex flex-column align-items-center" id="left-column">
 
         <!-- Modal -->
         <form action="" method="POST" encType="multipart/form-data" id="create-post">
@@ -26,7 +26,7 @@
                             </div>
                             <div class="mb-3 form-elements col-10">
                                 <label for="pet-type" class="form-label">What kind of pet is it?</label>
-                                <input type="text" class="form-control" id="pet-type" placeholder="petName">
+                                <input type="text" class="form-control" id="pet-type" placeholder="petType">
                             </div>
                             <div class="mb-3 form-elements col-10">
                                 <label for="post-text" class="form-label"><i class="fa-solid fa-comment"></i></label>
@@ -45,13 +45,13 @@
         </form>
 
     </section>
-    <section class="col-8" id="center-column">
+    <section class="col-12 col-md-8" id="center-column">
         {{#if posts.length}}
         <section>
             <h2 class="text-center mt-3">Your Posts:</h2>
             <ul class="post-list  d-flex flex-column align-items-center">
                 {{#each posts as |post|}}
-                <div class="d-grid gap-2 col-8 mt-5 mx-auto">
+                <div class="d-grid gap-2 col-12 col-md-10 col-xxl-7 mt-5 mx-auto">
                     <a class="btn btn-warning bg-gradient" href="/dashboard/edit/{{id}}" role="button">Edit Post</a>
                 </div>
 
@@ -63,14 +63,14 @@
         </section>
         {{/if}}
     </section>
-    <section class="col-2" id="right-column">
+    <section class="d-none d-md-block col-md-2" id="right-column">
 
     </section>
 
 </div>
 
 {{#if loggedIn}}
-<script src="/javaScript/create-post.js"></script>
+<script src="/javascript/create-post.js"></script>
 <script src="/javascript/like.js"></script>
 {{/if}}
 

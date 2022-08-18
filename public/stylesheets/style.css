@@ -154,6 +154,30 @@ main {
 /* SINGLE POST STYLES END */
 
 /* MEDIA QUERIES START */
+@media screen and (max-width: 768px) {
+    .card-dims {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-device-width: 768px) {
+    .card-dims {
+        width: 90vw;
+    }
+
+    #center-column {
+        padding-top: 21vh;
+    }
+}
+
+/* @media screen and (max-width: 768px) 
+and (orientation: landscape) {
+    
+    #center-column {
+        padding-top: 42vh;
+    }
+} */
+
 @media screen and (max-width: 800px) {
     #login-form {
         width: 90vw;
@@ -166,6 +190,23 @@ main {
     }
 }
 
+@media screen and (max-width: 916px) 
+and (orientation: landscape) {
+    
+    #center-column {
+        padding-top: 42vh;
+    }
+}
+
+@media screen 
+and (min-device-width: 1024px)
+and (max-device-width: 1181px)
+and (orientation: landscape) {
+    #center-column {
+        padding-top: 20vh;
+    }
+}
+
 @media screen and (min-width: 1600px) {
     #login-form {
         width: 30vw;
@@ -175,6 +216,14 @@ main {
     #signup-form {
         width: 30vw;
         min-height: 30vh;
+    }
+
+    .card-dims {
+        width: 30vw;
+    }
+
+    .edit-button {
+        width: 30vw !important;
     }
 }
 

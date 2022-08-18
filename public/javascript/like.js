@@ -15,11 +15,13 @@ async function likeClickHandler(element) {
         }
     });
 
+    
     if (response.ok) {
         console.log('like response okay');
         document.location.reload();
     } else {
-        alert(response.statusText);
+        // alert(response.statusText);
+        alert('You must be signed in.')
     }
 }
 
