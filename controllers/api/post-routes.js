@@ -78,46 +78,6 @@ router.get('/:id', (req, res) => {
     })
 })
 
-// router.post('/', (req, res) => {
-//   console.log('req.files!!!!!!!!!!!!!!!!!!');
-//   console.log(req.files)
-//   Post.create({
-//     user_id: req.session.user_id,
-//     post_image: req.files.post_image,
-//     post_text: req.body.post_text,
-//     pet_name: req.body.pet_name,
-//     pet_type: req.body.pet_type,
-//     created_at: req.body.created_at,
-//     post_image: req.files.post_image
-//   })
-//     // .then(dbPostData => res.json(dbPostData))
-//     .then(dbPostData => {
-//       console.log('dbPostData!!!!!!!!!!!!!')
-//       console.log(dbPostData);
-
-//       res.json(dbPostData);
-//     })
-//     .catch(err => {
-//       console.log(err)
-//       res.status(500).json(err)
-//     })
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 router.post('/newPost', (req, res) => {
   console.log('req.files!!!!!!!!!!!!!!!!!!!!!');
@@ -127,37 +87,22 @@ router.post('/newPost', (req, res) => {
   }
 
   let post_image = req.files.post_image;
-  // console.log('post_iamge!!!!!!!!!!!!');
-  // console.log(post_image);
-
-  // let uploadPath = __dirname + '/upload/' + post_image.name;
-  // let uploadPath = '/images/upload/' + post_image.name;
-  // console.log('uploadPath!!!!!!!!!!!!!');
-  // console.log(uploadPath);
-
+ 
   let b64 = Buffer.from(post_image.data).toString('base64');
   let mimeType = 'image/png';
   let hope = `data:${mimeType};base64,${b64}`
-  
-  // post_image.mv(uploadPath, function (err) {
-  //   if (err) return res.status(500).send(err);
-  // });
 
   Post.create({
     user_id: req.session.user_id,
-    // post_id: req.params.id,
-    // id: req.params.id,
     post_image: hope,
     post_text: "",
     pet_name: "",
     pet_type: "",
     created_at: req.body.created_at,
   })
-  // .then(dbPostData => res.json(dbPostData))
   .then(dbPostData => {
-    console.log('1111111111111111111dbPostData!!!!!!!!!!!!!')
+    console.log('newPost   dbPostData!!!!!!!!!!!!!')
     console.log(dbPostData);
-
     res.json(dbPostData);
   })
   .catch(err => {
@@ -165,12 +110,10 @@ router.post('/newPost', (req, res) => {
     res.status(500).json(err)
   })
 });
-// });
 
 router.put('/newPost/:id', (req, res) => {
   console.log('PUT!!!!!!!!!!!!REQ.BODY!!!!!!!!!!');
   console.log(req.body)
-
   Post.update(
     {
     post_text: req.body.post_text,
@@ -186,9 +129,8 @@ router.put('/newPost/:id', (req, res) => {
   
   )
   .then(dbPostData => {
-    console.log('22222222222222222222dbPostData!!!!!!!!!!!!!')
+    console.log('newPost UPDATE dbPostData!!!!!!!!!!!!!')
     console.log(dbPostData);
-
     res.json(dbPostData);
   })
   .catch(err => {
@@ -196,16 +138,6 @@ router.put('/newPost/:id', (req, res) => {
     res.status(500).json(err)
   })
 })
-
-
-
-
-
-
-
-
-
-
 
 
 router.put('/like', (req, res) => {
