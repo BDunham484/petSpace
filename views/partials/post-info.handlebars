@@ -1,12 +1,10 @@
-<div class="card col-10 mx-auto my-3" id="#{{id}}">
+<div class="card mx-auto my-3 card-dims" id="#{{id}}">
     <div class="card-header">
         <h5>{{pet_name}} the {{pet_type}}<span class="card-subtitle mb-2 text-muted"> w/
                 {{user.username}}</span></h5>
         <p class="mb-2 text-muted">{{format_date created_at}}</p>
     </div>
-
-    <img src="{{post_image}}"
-        class="card-img-top" alt="...">
+        <img src="{{post_image}}" class="card-img-top" alt="...">
     <hr class="border border-dark border-1 opacity-25 col-12">
     <div class="card-body">
         <p class="card-text">{{post_text}}</p>
