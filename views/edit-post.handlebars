@@ -1,5 +1,5 @@
 <div class="row dashboard-row">
-    <section class="col-2 d-flex flex-column align-items-center" id="left-column">
+    <section class="d-none d-md-block col-md-2 d-flex flex-column align-items-center" id="left-column">
 
         <!-- Modal -->
         <div class="modal fade" id="create-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -37,14 +37,15 @@
             </div>
         </div>
     </section>
-    <section class="col-8" id="center-column">
-        <a href="/dashboard" class="refresh"> &larr; Back to dashboard</a>
+    <section class="col-12 col-md-8" id="center-column">
+        <a href="/dashboard" class="btn btn-secondary refresh mb-3 bg-gradient"> &larr; Back to dashboard</a>
+        {{!-- <button href="/dashboard" type="button" class="btn btn-secondary refresh mb-3 bg-gradient">&larr; Back to dashboard</button> --}}
         <h2>
             Edit Post
         </h2>
         
         <form class="edit-post-form">
-            <div class="card col-7 mx-auto my-3" id="#{{post.id}}">
+            <div class="card col-12 col-md-10 col-xxl-7 mx-auto my-3" id="#{{post.id}}">
                 <div class="card-header">
                     <input type="text" name="pet-name" class="form-control" value="{{post.pet_name}}"> the
                     <input type="text" name="pet-type" class="form-control" value="{{post.pet_type}}">
@@ -68,7 +69,7 @@
                 </div>
 
             </div>
-            <div class="d-grid gap-2 col-8 my-5 mx-auto">
+            <div class="d-grid gap-2 col-12 col-md-10 col-xxl-7 my-5 mx-auto">
                 <button type="submit" class="btn btn-info bg-gradient">Save post</button>
                 <button type="button" class="btn btn-warning bg-gradient delete-post-btn">Delete post</button>
             </div>
@@ -76,7 +77,7 @@
 
 
     </section>
-    <section class="col-2" id="right-column">
+    <section class="d-none d-md-block col-md-2" id="right-column">
 
     </section>
 

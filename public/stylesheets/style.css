@@ -154,6 +154,12 @@ main {
 /* SINGLE POST STYLES END */
 
 /* MEDIA QUERIES START */
+@media screen and (max-width: 768px) {
+    .card-dims {
+        width: 90vw;
+    }
+}
+
 @media screen and (max-width: 800px) {
     #login-form {
         width: 90vw;
@@ -175,6 +181,14 @@ main {
     #signup-form {
         width: 30vw;
         min-height: 30vh;
+    }
+
+    .card-dims {
+        width: 30vw;
+    }
+
+    .edit-button {
+        width: 30vw !important;
     }
 }
 
