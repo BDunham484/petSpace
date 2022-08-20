@@ -87,7 +87,7 @@ router.post('/newPost', (req, res) => {
   }
 
   let post_image = req.files.post_image;
- 
+
   let b64 = Buffer.from(post_image.data).toString('base64');
   let mimeType = 'image/png';
   let hope = `data:${mimeType};base64,${b64}`
@@ -100,15 +100,15 @@ router.post('/newPost', (req, res) => {
     pet_type: "",
     created_at: req.body.created_at,
   })
-  .then(dbPostData => {
-    console.log('newPost   dbPostData!!!!!!!!!!!!!')
-    console.log(dbPostData);
-    res.json(dbPostData);
-  })
-  .catch(err => {
-    console.log(err)
-    res.status(500).json(err)
-  })
+    .then(dbPostData => {
+      console.log('newPost   dbPostData!!!!!!!!!!!!!')
+      console.log(dbPostData);
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err)
+    })
 });
 
 router.put('/newPost/:id', (req, res) => {
@@ -116,27 +116,27 @@ router.put('/newPost/:id', (req, res) => {
   console.log(req.body)
   Post.update(
     {
-    post_text: req.body.post_text,
-    pet_name: req.body.pet_name,
-    pet_type: req.body.pet_type,
-    created_at: req.body.created_at,
-  },
-  {
-    where: {
-      id: req.params.id
-    }
-  },
-  
+      post_text: req.body.post_text,
+      pet_name: req.body.pet_name,
+      pet_type: req.body.pet_type,
+      created_at: req.body.created_at,
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    },
+
   )
-  .then(dbPostData => {
-    console.log('newPost UPDATE dbPostData!!!!!!!!!!!!!')
-    console.log(dbPostData);
-    res.json(dbPostData);
-  })
-  .catch(err => {
-    console.log(err)
-    res.status(500).json(err)
-  })
+    .then(dbPostData => {
+      console.log('newPost UPDATE dbPostData!!!!!!!!!!!!!')
+      console.log(dbPostData);
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err)
+    })
 })
 
 
