@@ -12,7 +12,9 @@ html {
     color: #333;
     background-color: #F3F5F6;
 }
+/* UNIVERSAL/GLOBAL STYLES END */
 
+/* NAVBAR STYLES START */
 .navbar-brand
 {
     position: relative;
@@ -23,7 +25,7 @@ html {
     background-repeat: no-repeat;
     background-position: center;
 }
-/* UNIVERSAL/GLOBAL STYLES END */
+/* NAVBAR STYLES END */
 
 .wrapper {
     width: 100%;
