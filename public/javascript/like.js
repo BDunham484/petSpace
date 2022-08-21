@@ -22,7 +22,7 @@ async function likeClickHandler(element) {
         document.location.reload();
     } else {
         // alert(response.statusText);
-        alert('You must be signed in.')
+        alert("You've already like this post.")
     }
 }
 //adds event listener to 'like button'

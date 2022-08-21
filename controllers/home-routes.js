@@ -40,12 +40,12 @@ router.get('/', (req, res) => {
                 console.log(posts);
                 res.render('homepage', {
                     posts,
-                    loggedIn: req.session.loggedIn,
+                    loggedIn: true
                 })
             })
             .catch(err => {
                 console.log(err);
-                res.status(500).json(err);
+                // res.status(500).json(err);
                 res.redirect('/signup');
             });
 });

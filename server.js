@@ -7,7 +7,6 @@ const exphbs = require("express-handlebars");
 const hbs = exphbs.create({ helpers });
 const fileUpload = require('express-fileupload');
 var bodyParser = require('body-parser');
-// var cors = require('cors');
 
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -25,11 +24,8 @@ const sess = {
 const app = express();
 const PORT = process.env.PORT || 3001; 
 
-// app.use(cors());
 app.use(bodyParser());
-app.use(fileUpload({
-    
-}))
+app.use(fileUpload({ }))/
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
