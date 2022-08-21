@@ -1,3 +1,4 @@
+//import models
 const User = require('./User');
 const Comment = require('./Comment');
 const Like = require('./Like');
@@ -34,14 +35,12 @@ User.belongsToMany(Post, {
     through: Like,
     as: 'liked_posts',
     foreignKey: 'user_id',
-    // onDelete: 'SET NULL'
 });
 
 Post.belongsToMany(User, {
     through: Like,
     as: 'liked_posts',
     foreignKey: 'post_id',
-    // onDelete: 'SET NULL'
 });
 
 Like.belongsTo(User, {
@@ -60,5 +59,5 @@ Post.hasMany(Like, {
     foreignKey: 'post_id'
 });
 
-
+//export models
 module.exports = { User, Comment, Like, Post }
