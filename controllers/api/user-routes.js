@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 // GET /api/users/1
 router.get('/:id', (req, res) => {
-    // Access User model and run .findOne() method)
+    // Access User model and run .findOne() method.
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
@@ -83,6 +83,7 @@ router.post('/', (req, res) => {
 // POST /api/users/login
 router.post('/login', (req, res) => {
     // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+    //access User model and .findOne() method.
     User.findOne({
         where: {
             email: req.body.email
