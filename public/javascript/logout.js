@@ -1,4 +1,6 @@
+//function to handle action when the logout button is clicked
 async function logout() {
+    //runs fetch request to logout user
     const response = await fetch('/api/users/logout', {
         method: 'post',
         headers: {
@@ -13,5 +15,5 @@ async function logout() {
         document.location.replace('/login');
     }
 }
-
+//adds event listener to logout button
 document.querySelector('#logout').addEventListener('click', logout);
