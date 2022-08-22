@@ -2,11 +2,11 @@
 //it deletes a specific post based on it's unique id via post-routes.js
 async function deleteFormHandler(event) {
     event.preventDefault();
-
+    //grabs post id from url
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-
+    //runs fetch request to delete post at id
     const response = await fetch(`/api/posts/${id}`, {
 
         method: 'DELETE'
@@ -19,5 +19,5 @@ async function deleteFormHandler(event) {
     }
 
 }
-
+//adds event listener to 'delte post button'
 document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);

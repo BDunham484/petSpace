@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
+// get all posts for dashboard and display in descending order based on creation date
 router.get('/', (req, res) => {
     Post.findAll({
             where: {
@@ -51,6 +51,7 @@ router.get('/', (req, res) => {
         });
 });
 
+//route to find a post based on Id for editing
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
             where: {
@@ -101,8 +102,5 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 })
 
-
-
-
-
+//exports router
 module.exports = router;

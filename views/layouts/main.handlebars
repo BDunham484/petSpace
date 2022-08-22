@@ -1,27 +1,34 @@
+{{!-- main handlebars html layout --}}
 <!DOCTYPE html>
 <html lang="en">
-
+{{!-- meta data --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>petSpace</title>
+    {{!-- import css stylesheet --}}
     <link rel="stylesheet" href="/stylesheets/style.css">
+    {{!-- import bootstrap link --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        {{!-- import font-awesome link --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {{!-- import bootstrap icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
-
+{{!-- body --}}
 <body>
     <div class="wrapper">
+        {{!-- header --}}
         <header>
             <nav class="navbar navbar-expand-lg bg-info bg-gradient py-2 fixed-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand me-auto ms-5 my-3" href="/"></a>
-                    <img src="../../public/images/logo.png" alt="">
+                    {{!-- logo --}}
+                    <a class="navbar-brand me-auto ms-5 my-3" id="nav-logo" href="/">
                     </a>
+                    {{!-- hamburger menu for smaller screens --}}
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -29,18 +36,22 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto me-5">
                             {{#if loggedIn}}
+                            {{!-- dashboard button --}}
                             <li class="nav-item">
                                 <a class="nav-link text-white" id="#" href="/dashboard">dashboard</a>
                             </li>
+                            {{!-- logout button --}}
                             <li class="nav-item">
                                 <a class="nav-link text-white" id="logout" href="#">Logout <i
                                         class="fa-solid fa-arrow-right-from-bracket"></i></a>
                             </li>
+                            {{!-- create new post button --}}
                             <li class="nav-item">
                                 <button type="submit" class="btn text-white" id="create-new-post" data-bs-toggle="modal"
                                     data-bs-target="#create-post-modal"><i class="fa-solid fa-plus"></i> Post</button>
                             </li>
                             {{else}}
+                            {{!-- login button --}}
                             <li class="nav-item">
                                 <a href="/login" class="nav-link text-white" href="#">login</a>
                             </li>
@@ -51,14 +62,17 @@
             </nav>
         </header>
         <main>
+            {{!-- import handlebars body partials/layouts --}}
             {{{ body }}}
         </main>
         <footer>
         </footer>
     </div>
+    {{!-- import bootstrap script --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+        {{!-- if loggedIn import logout script --}}
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}

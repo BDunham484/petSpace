@@ -1,4 +1,6 @@
+{{!-- bootstrap row and column layout for homepage body display --}}
 <div class="row dashboard-row">
+    {{!-- left column --}}
     <section class="d-none d-md-block col-md-2 d-flex flex-column align-items-center" id="left-column">
         
         <!-- Modal -->
@@ -45,6 +47,7 @@
         </form>
         
     </section>
+    {{!-- center column --}}
     <section class="col-12 col-md-8" id="center-column">
         {{#if posts.length}}
         <section>
@@ -59,12 +62,12 @@
         </section>
         {{/if}}
     </section>
+    {{!-- right column --}}
     <section class="d-none d-md-block col-md-2" id="right-column">
 
     </section>
 
 </div>
-
 
 {{#if loggedIn}}
 <script src="/javascript/create-post.js"></script>
