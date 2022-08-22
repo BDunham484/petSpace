@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     console.log(req.session)
         Post.findAll({
             order: [sequelize.fn('RAND')],
-            limit: 10,
+            limit: 5,
             attributes: [
                 'id',
                 'user_id',
