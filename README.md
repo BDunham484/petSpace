@@ -29,7 +29,7 @@ with the following npm packages
 * `sequelize`
 
 ## Installation 💾
-***Requirments***
+***Requirements***
 
 [Node.js](https://nodejs.org/en/) | [Inquirer](https://www.npmjs.com/package/inquirer) | [MySQL](https://www.npmjs.com/package/mysql2) | [Insomnia](https://insomnia.rest/)
 
