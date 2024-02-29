@@ -47,7 +47,7 @@ with the following npm packages
 
 
 ## Usage 💻
-App can be viewed at - [Heroku][1]! 
+App can be viewed at - [Render][1]! 
 
 ## Screenshots 📸
 |<center><b>Sign Up</b>|<center><b>Sign In</b>|
@@ -58,7 +58,7 @@ App can be viewed at - [Heroku][1]!
 
 ___
 
-[1]:https://boiling-plateau-13571.herokuapp.com/
+[1]:https://petspace-bxpy.onrender.com/
 [2]:https://github.com/BDunham484/petSpace
 [3]:https://github.com/BDunham484/petSpace/blob/danny/public/images/signUp.png
 [4]:https://github.com/BDunham484/petSpace/blob/danny/public/images/signIn.png
